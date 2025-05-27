@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | BJM Mantenimientos</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" />
+  <link rel="icon" href="icons/favicons/favicon.ico" type="image/x-icon" />
+  
+</head>
+<body>
+  <header id="header"></header>
+
+ <main class="bloque-institucional animar-aparicion visible">
+  <div class="contenedor-max">
+    <h1><i class="fas fa-envelope-open-text"></i> Contacto</h1>
+
+   <!-- 🔒 Mensaje de bloqueo por cookies -->
+<div id="bloqueo-formulario" style="display: none;" class="bloqueo-cookies-form">
+  <p>Este formulario solo estará disponible cuando aceptes las cookies estadisticas.</p>
+  <button id="abrir-config-contacto" class="boton-enviar">Cambiar configuración de cookies</button>
+</div>
+
+
+    <!-- ✅ Formulario envuelto para poder ocultarlo si no se aceptan cookies -->
+    <div id="formulario-contacto-wrapper">
+      <section class="formulario-contacto">
+        <div id="mensaje-gracias" class="oculto">
+  <h2><i class="fas fa-check-circle"></i> ¡Gracias por tu mensaje!</h2>
+  <p>Nos pondremos en contacto contigo en breve.</p>
+</div>
+
+        <form action="https://formsubmit.co/serborve@gmail.com" method="POST">
+          <!-- ✅ En producción, sustituir por:
+               https://formsubmit.co/contacto@bjmantenimientos.com -->
+
+       
+          <input type="hidden" name="_captcha" value="false" />
+
+          <!-- Campo oculto que se envía con el consentimiento -->
+          <input type="hidden" name="consentimiento" value="✅ El usuario aceptó el tratamiento de datos personales según la cláusula del formulario." />
+
+          <label for="nombre">Nombre*</label>
+          <input type="text" id="nombre" name="nombre" required />
+
+          <label for="email">Correo electrónico*</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" />
+
+          <label for="mensaje">Mensaje*</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+          <!-- Casilla RGPD -->
+          <div class="consentimiento">
+            <label for="acepto">
+              <input type="checkbox" id="acepto" name="acepto" required />
+              Autorizo el tratamiento de mis datos personales con el único fin de gestionar esta solicitud de contacto, incluyendo la posible respuesta por teléfono o correo electrónico. 
+              Soy consciente de que puedo revocar este consentimiento en cualquier momento.*
+            </label>
+          </div>
+
+          <button type="submit" class="boton-enviar">Enviar mensaje</button>
+        </form>
+      </section>
+    </div>
+
+    <section class="datos-contacto">
+      <h2><i class="fas fa-map-marker-alt"></i> Dónde estamos</h2>
+      <p><strong>Dirección:</strong> Calle Aries (La Florida) 6, El Puerto de Santa María, 11500, Cádiz, España</p>
+      <p><strong>Teléfono:</strong> <a href="tel:+34615975960">615 97 59 60</a></p>
+      <p><strong>Email:</strong> <a href="mailto:contacto@bjmantenimientos.es">contacto@bjmantenimientos.es</a></p>
+
+      <div class="mapa">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3202.6877006524223!2d-6.224013425465787!3d36.609829922302055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1748202942854!5m2!1ses!2ses"
+          width="100%"
+          height="300"
+          style="border:0;"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <a class="whatsapp-contacto" href="https://wa.me/34615975960" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> Enviar WhatsApp
+      </a>
+    </section>
+  </div>
+</main>
+
+  <button id="btn-top" title="Volver arriba">&#8679;</button>
+  <footer id="footer"></footer>
+
+  <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/cookies.js"></script>
+  <script src="js/menu.js"></script>
+  <script>
+    // Animaciones scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const elementosAnimar = document.querySelectorAll('.animar-aparicion');
+      const mostrarElemento = (entrada, observador) => {
+        entrada.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observador.unobserve(e.target);
+          }
+        });
+      };
+      const observador = new IntersectionObserver(mostrarElemento, { threshold: 0.2 });
+      elementosAnimar.forEach(el => observador.observe(el));
+
+      // 🔒 Bloqueo de formulario si no hay cookies analíticas
+    const wrapper = document.getElementById('formulario-contacto-wrapper');
+const bloqueo = document.getElementById('bloqueo-formulario');
+
+function cookiesAnaliticasAceptadas() {
+  const aceptadas = localStorage.getItem("cookies_accepted");
+
+  if (aceptadas === "all") return true;
+  if (aceptadas === "custom") {
+    try {
+      const personalizadas = JSON.parse(localStorage.getItem("cookies_custom"));
+      return personalizadas?.analytics === true;
+    } catch (e) {
+      return false;
+    }
+  }
+  return false;
+}
+
+if (cookiesAnaliticasAceptadas()) {
+  if (wrapper) wrapper.style.display = 'block';
+  if (bloqueo) bloqueo.style.display = 'none';
+} else {
+  if (wrapper) wrapper.style.display = 'none';
+  if (bloqueo) bloqueo.style.display = 'block';
+}
+
+    });
+
+    function abrirConfiguracionCookies() {
+      // Este botón abrirá la ventana de configuración de cookies si está implementada
+      document.querySelector("#boton-configurar-cookies")?.click();
+    }
+    // 🔁 Botón para abrir modal de configuración de cookies desde contacto.html
+document.addEventListener("DOMContentLoaded", () => {
+  const boton = document.getElementById("abrir-config-contacto");
+  const modal = document.getElementById("cookie-config-modal");
+  if (boton && modal) {
+    boton.addEventListener("click", () => {
+      modal.classList.remove("oculto");
+    });
+  }
+});
+
+  </script>
+</body>
+</html>
+
+
+
+<!-- este script hace que al cambiar la configuracion y aceptar cookies estadisticas se abra el formulario -->
+<script>
+  function mostrarFormularioSiHayConsentimiento() {
+    const wrapper = document.getElementById('formulario-contacto-wrapper');
+    const bloqueo = document.getElementById('bloqueo-formulario');
+
+    const aceptadas = localStorage.getItem("cookies_accepted");
+
+    let permitir = false;
+
+    if (aceptadas === "all") {
+      permitir = true;
+    } else if (aceptadas === "custom") {
+      try {
+        const config = JSON.parse(localStorage.getItem("cookies_custom"));
+        permitir = config.analytics === true;
+      } catch (e) {
+        permitir = false;
+      }
+    }
+
+    if (permitir) {
+      wrapper.style.display = 'block';
+      bloqueo.style.display = 'none';
+    } else {
+      wrapper.style.display = 'none';
+      bloqueo.style.display = 'block';
+    }
+  }
+  
+</script>
+<script>
+document.querySelector("form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const form = this;
+
+  // Enviar con fetch
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(form),
+  }).then(() => {
+    form.style.display = "none";
+    document.getElementById("mensaje-gracias").classList.remove("oculto");
+  }).catch(() => {
+    alert("Error al enviar. Inténtalo de nuevo.");
+  });
+});
+</script>

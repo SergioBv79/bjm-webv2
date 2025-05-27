@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gracias por contactar | BJM Mantenimientos</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" />
+  <link rel="icon" href="icons/favicons/favicon.ico" type="image/x-icon" />
+  <script src="js/header.js" defer></script>
+  <script src="js/footer.js" defer></script>
+</head>
+<body>
+  <header id="header"></header>
+
+  <main class="gracias-bjm animar-aparicion">
+    <h1><i class="fas fa-check-circle"></i> ¡Gracias por tu mensaje!</h1>
+    <p>Tu consulta se ha enviado correctamente. En breve una persona del equipo de BJM se pondrá en contacto contigo.</p>
+
+    <section class="datos-confirmacion">
+      <p><strong>📍 Dirección:</strong> Calle Técnica 42, Polígono Industrial El Motor, Cádiz</p>
+      <p><strong>📞 Teléfono:</strong> <a href="tel:+34956001122">956 00 11 22</a></p>
+    </section>
+
+    <a href="index.html" class="boton-volver">← Volver al inicio</a>
+  </main>
+
+  <footer id="footer"></footer>
+<script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/cookies.js"></script>
+  <script src="js/menu.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const elementosAnimar = document.querySelectorAll('.animar-aparicion');
+      const mostrarElemento = (entrada, observador) => {
+        entrada.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observador.unobserve(e.target);
+          }
+        });
+      };
+      const observador = new IntersectionObserver(mostrarElemento, { threshold: 0.2 });
+      elementosAnimar.forEach(el => observador.observe(el));
+    });
+  </script>
+</body>
+</html>

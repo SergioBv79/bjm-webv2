@@ -1,0 +1,2 @@
+montar htmls vacias con estructura como las de blog y trabajos para poder comprobar que todo apunta bien. tambien las de menu legales. comprobar enlaces luego.
+
