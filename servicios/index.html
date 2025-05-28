@@ -169,25 +169,35 @@
     const cinta = document.getElementById(idCinta);
     const template = document.getElementById(idBloque);
 
-    // Clonamos 2 veces los bloques
     for (let i = 0; i < 2; i++) {
       cinta.append(...template.content.cloneNode(true).children);
     }
 
-    let pausa = false;
-    let reanudar;
+    let enPausa = false;
+    let temporizador;
 
-    // Pausar con primer clic, reanudar automático a los 5 seg
-    cinta.addEventListener('click', () => {
-      if (!pausa) {
-        cinta.style.animationPlayState = 'paused';
-        pausa = true;
-        clearTimeout(reanudar);
-        reanudar = setTimeout(() => {
-          cinta.style.animationPlayState = 'running';
-          pausa = false;
-        }, 5000); // 5 segundos
-      }
+    cinta.querySelectorAll('a').forEach(enlace => {
+      enlace.addEventListener('click', (e) => {
+        if (!enPausa) {
+          e.preventDefault(); // 🔒 Evita navegación en el primer clic
+          cinta.style.animationPlayState = 'paused';
+          enPausa = true;
+
+          // Permitir navegación en segundo clic
+          enlace.dataset.activado = "true";
+
+          temporizador = setTimeout(() => {
+            cinta.style.animationPlayState = 'running';
+            enPausa = false;
+            enlace.dataset.activado = "";
+          }, 5000);
+        } else if (enlace.dataset.activado === "true") {
+          // 🔓 Segundo clic → ahora sí dejamos navegar
+          return true;
+        } else {
+          e.preventDefault(); // bloquea navegación si hacen clic en otro mientras está pausado
+        }
+      });
     });
   }
 
@@ -196,6 +206,7 @@
     duplicarYControlar("cinta-comunidades", "bloque-comunidades");
   });
 </script>
+
 
 </body>
 </html>
