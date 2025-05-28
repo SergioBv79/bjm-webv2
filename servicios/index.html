@@ -3,27 +3,199 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Página en construcción</title>
-  <link rel="icon" href="../icons/favicons/favicon.ico" type="image/x-icon">
+  <title>Servicios BJM | Mantenimiento Industrial y Comunidades</title>
   <link rel="stylesheet" href="../css/estilos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" />
+  <link rel="icon" href="../icons/favicons/favicon.ico" type="image/x-icon" />
+  <style>
+    .bloque-titulo {
+      background-color: #0b214a;
+      color: #00f0ff;
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      font-family: 'Rajdhani', sans-serif;
+    }
+    .bloque-titulo h2 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+    .wrapper-scroll {
+      width: 100vw;
+      overflow: hidden;
+      border-top: 4px solid #00f0ff;
+      border-bottom: 4px solid #00f0ff;
+      background-color: #010d1c;
+    }
+    .cinta-industrial, .cinta-comunidades {
+  display: flex;
+  width: max-content;
+  animation: scrollCinta 50s linear infinite;
+}
 
-  
+    .cinta-comunidades {
+      animation-direction: reverse;
+    }
+    @keyframes scrollCinta {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .bloque-industrial {
+      position: relative;
+      width: 360px;
+      height: 240px;
+      margin: 0;
+      flex-shrink: 0;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .bloque-industrial img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.85);
+    }
+    .bloque-industrial:hover {
+      transform: scale(1.1);
+      z-index: 10;
+    }
+    .texto-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.2rem;
+      padding: 0.5rem;
+      text-align: center;
+      text-transform: uppercase;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .bloque-industrial:hover .texto-overlay {
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
   <header id="header"></header>
 
-  <main class="pagina-construccion">
-    <h1>🚧 Esta sección está en construcción</h1>
-    <p>Estamos trabajando para traerte algo espectacular.</p>
+  <section class="bloque-titulo">
+    <h2>Servicios de Mantenimiento Industrial</h2>
+  </section>
+  <main class="wrapper-scroll">
+    <div class="cinta-industrial" id="cinta-industrial">
+      <template id="bloque-industrial">
+        <a href="maquinaria.html" class="bloque-industrial">
+          <img src="../img/maquinaria industrial 3.jpg" alt="Maquinaria">
+          <div class="texto-overlay">Maquinaria Industrial</div>
+        </a>
+        <a href="mantenimiento-preventivo.html" class="bloque-industrial">
+          <img src="../img/emotelldo 1.jpg" alt="Preventivo">
+          <div class="texto-overlay">Mantenimiento Preventivo</div>
+        </a>
+        <a href="mantenimiento-correctivo.html" class="bloque-industrial">
+          <img src="../img/mantenimiento correctivo 1 - copia.jpg" alt="Correctivo">
+          <div class="texto-overlay">Mantenimiento Correctivo</div>
+        </a>
+        <a href="soldadura.html" class="bloque-industrial">
+          <img src="../img/soldadura industrial1.jpg" alt="Soldadura">
+          <div class="texto-overlay">Soldadura Industrial</div>
+        </a>
+        <a href="montaje-desmontaje.html" class="bloque-industrial">
+          <img src="../img/embotellado.jpg" alt="Montaje">
+          <div class="texto-overlay">Montaje de Maquinaria</div>
+        </a>
+        <a href="electricidad-industrial-cuadros-electricos.html" class="bloque-industrial">
+          <img src="../img/cuadros electircos.jpg" alt="Cuadros Eléctricos">
+          <div class="texto-overlay">Cuadros Eléctricos</div>
+        </a>
+        <a href="automatizacion.html" class="bloque-industrial">
+          <img src="../img/automatizacion.jpg" alt="Automatización">
+          <div class="texto-overlay">Automatización</div>
+        </a>
+        <a href="documentacion-tecnica.html" class="bloque-industrial">
+          <img src="../img/documentacion tecnica.jpg" alt="Documentación Técnica">
+          <div class="texto-overlay">Documentación Técnica</div>
+        </a>
+        <a href="mantenimiento-especializado.html" class="bloque-industrial">
+          <img src="../img/mantenimiento preventivo 2 - copia.jpg" alt="Especializado">
+          <div class="texto-overlay">Mantenimiento Especializado</div>
+        </a>
+      </template>
+    </div>
+  </main>
+
+  <section class="bloque-titulo">
+    <h2>Servicios a Comunidades y Edificios</h2>
+  </section>
+  <main class="wrapper-scroll">
+    <div class="cinta-comunidades" id="cinta-comunidades">
+      <template id="bloque-comunidades">
+        <a href="fontaneria.html" class="bloque-industrial">
+          <img src="../img/fontaneria.jpg" alt="Fontanería">
+          <div class="texto-overlay">Fontanería</div>
+        </a>
+        <a href="electricidad.html" class="bloque-industrial">
+          <img src="../img/electricidad.jpg" alt="Electricidad">
+          <div class="texto-overlay">Electricidad</div>
+        </a>
+        <a href="pintura.html" class="bloque-industrial">
+          <img src="../img/mantenimiento de edificios - copia.jpg" alt="Pintura">
+          <div class="texto-overlay">Pintura</div>
+        </a>
+        <a href="limpieza.html" class="bloque-industrial">
+          <img src="../img/limpieza edificios.jpg" alt="Limpieza">
+          <div class="texto-overlay">Limpieza</div>
+        </a>
+      </template>
+    </div>
   </main>
 
   <footer id="footer"></footer>
-   <script src="../js/header.js"></script>
+
+  <script src="../js/header.js"></script>
   <script src="../js/footer.js"></script>
   <script src="../js/scripts.js"></script>
   <script src="../js/cookies.js"></script>
   <script src="../js/menu.js"></script>
+
+ <script>
+  function duplicarYControlar(idCinta, idBloque) {
+    const cinta = document.getElementById(idCinta);
+    const template = document.getElementById(idBloque);
+
+    // Clonamos 2 veces los bloques
+    for (let i = 0; i < 2; i++) {
+      cinta.append(...template.content.cloneNode(true).children);
+    }
+
+    let pausa = false;
+    let reanudar;
+
+    // Pausar con primer clic, reanudar automático a los 5 seg
+    cinta.addEventListener('click', () => {
+      if (!pausa) {
+        cinta.style.animationPlayState = 'paused';
+        pausa = true;
+        clearTimeout(reanudar);
+        reanudar = setTimeout(() => {
+          cinta.style.animationPlayState = 'running';
+          pausa = false;
+        }, 5000); // 5 segundos
+      }
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    duplicarYControlar("cinta-industrial", "bloque-industrial");
+    duplicarYControlar("cinta-comunidades", "bloque-comunidades");
+  });
+</script>
+
 </body>
 </html>
