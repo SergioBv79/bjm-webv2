@@ -9,77 +9,113 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" />
   <link rel="icon" href="../icons/favicons/favicon.ico" type="image/x-icon" />
   <style>
-    .bloque-titulo {
-      background-color: #0b214a;
-      color: #00f0ff;
-      text-align: center;
-      padding: 2rem 1rem 1rem;
-      font-family: 'Rajdhani', sans-serif;
-    }
-    .bloque-titulo h2 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
-      letter-spacing: 1px;
-    }
-    .wrapper-scroll {
-      width: 100vw;
-      overflow: hidden;
-      border-top: 4px solid #00f0ff;
-      border-bottom: 4px solid #00f0ff;
-      background-color: #010d1c;
-    }
-    .cinta-industrial, .cinta-comunidades {
-  display: flex;
-  width: max-content;
-  animation: scrollCinta 50s linear infinite;
-}
+  .bloque-titulo {
+    background-color: #0b214a;
+    color: #00f0ff;
+    text-align: center;
+    padding: 2rem 1rem 1rem;
+    font-family: 'Rajdhani', sans-serif;
+  }
+  .bloque-titulo h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+  }
+  .wrapper-scroll {
+    position: relative; /* ✅ Necesario para las sombras */
+    width: 100vw;
+    overflow: hidden;
+    border-top: 4px solid #00f0ff;
+    border-bottom: 4px solid #00f0ff;
+    background-color: #010d1c;
+  }
 
-    .cinta-comunidades {
-      animation-direction: reverse;
+  /* ✅ SOMBRAS laterales */
+  .wrapper-scroll::before,
+  .wrapper-scroll::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+  }
+  .wrapper-scroll::before {
+    left: 0;
+    background: linear-gradient(to right, #010d1c, transparent);
+  }
+  .wrapper-scroll::after {
+    right: 0;
+    background: linear-gradient(to left, #010d1c, transparent);
+  }
+
+  .cinta-industrial,
+  .cinta-comunidades {
+    display: flex;
+    width: max-content;
+    animation: scrollCinta 65s linear infinite;
+  }
+  .cinta-comunidades {
+    animation-direction: reverse;
+  }
+  @keyframes scrollCinta {
+    0% {
+      transform: translateX(0);
     }
-    @keyframes scrollCinta {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    100% {
+      transform: translateX(-50%);
     }
-    .bloque-industrial {
-      position: relative;
-      width: 360px;
-      height: 240px;
-      margin: 0;
-      flex-shrink: 0;
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    .bloque-industrial img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.85);
-    }
-    .bloque-industrial:hover {
-      transform: scale(1.1);
-      z-index: 10;
-    }
-    .texto-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(0, 0, 0, 0.7);
-      color: #fff;
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 1.2rem;
-      padding: 0.5rem;
-      text-align: center;
-      text-transform: uppercase;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .bloque-industrial:hover .texto-overlay {
-      opacity: 1;
-    }
-  </style>
+  }
+
+  .bloque-industrial {
+    position: relative;
+    width: 360px;
+    height: 240px;
+    margin: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .bloque-industrial img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.85);
+    transition: transform 0.5s ease; /* ✅ ZOOM SUAVE */
+  }
+
+  .bloque-industrial:hover {
+    transform: scale(1.1);
+    z-index: 10;
+  }
+
+  .bloque-industrial:hover img {
+    transform: scale(1.05); /* ✅ ZOOM imagen */
+  }
+
+  .texto-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 1; /* Siempre visible */
+  }
+
+  .bloque-industrial:hover .texto-overlay {
+    opacity: 1;
+  }
+</style>
+
 </head>
 <body>
   <header id="header"></header>
@@ -155,7 +191,8 @@
       </template>
     </div>
   </main>
-
+ <!-- BOTÓN VOLVER ARRIBA -->
+  <button id="btn-top" title="Volver arriba">&#8679;</button>
   <footer id="footer"></footer>
 
   <script src="../js/header.js"></script>
