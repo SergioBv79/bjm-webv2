@@ -9,9 +9,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" />
   <link rel="icon" href="../icons/favicons/favicon.ico" type="image/x-icon" />
 
-<style>
-    
-
+  <style>
     .subseccion-magica {
       background-color: #0b214a;
       padding: 2rem 2rem 3rem;
@@ -25,6 +23,27 @@
       justify-content: center;
     }
 
+    .subseccion-magica::before,
+    .subseccion-magica::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, transparent, #00f0ff, transparent);
+      box-shadow: 0 0 8px #00f0ff;
+      z-index: 1;
+    }
+
+    .subseccion-magica::before {
+      top: 0;
+    }
+
+    .subseccion-magica::after {
+      bottom: 0;
+    }
+
     .galeria-giratoria {
       display: flex;
       flex-wrap: wrap;
@@ -34,12 +53,12 @@
     }
 
     .tarjeta-foto {
-      width: 220px;
-      height: 340px;
+      width: 260px;
+      height: 400px;
       background-color: #fff;
-      border-radius: 12px;
+      border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 0 12px rgba(0,240,255,0.4);
+      box-shadow: 0 0 30px rgba(0,240,255,0.6);
       animation: girar-foto 2.8s ease-out forwards;
       transform: rotateY(1080deg);
       opacity: 0;
@@ -105,20 +124,24 @@
       .tarjeta-foto {
         width: 90%;
         height: auto;
+        box-shadow: 0 0 14px rgba(0,240,255,0.4);
       }
 
       .titulo-subseccion {
         font-size: 1.8rem;
       }
+
+      .descripcion-sub,
+      .descripcion-sub p {
+        text-align: justify;
+      }
     }
   </style>
-
-  
 </head>
 <body>
   <header id="header"></header>
 
-<main>
+  <main>
     <section class="subseccion-magica">
       <div class="galeria-giratoria">
         <div class="tarjeta-foto"><img src="../img/maquinaria industrial 7.jpg" alt="Instalaciones industriales"></div>
@@ -130,15 +153,61 @@
         <h2 class="titulo-subseccion">Montaje de Maquinaria Industrial</h2>
         <p class="descripcion-sub">Somos especialistas en el montaje integral de líneas de producción industrial, adaptadas a sectores como alimentación, automoción, cosmética, farmacéutico y logístico. Nuestro equipo técnico ofrece soluciones llave en mano, desde el diseño hasta la puesta en marcha.</p>
         <p class="descripcion-sub">Realizamos la instalación de maquinaria y componentes eléctricos, integración de autómatas programables, sensores, variadores y controladores industriales. Colaboramos con marcas líderes como Siemens, Schneider, Omron o Festo, utilizando materiales certificados.</p>
+        <p class="descripcion-sub">Instalamos maquinaria como llenadoras, etiquetadoras, cintas transportadoras, prensas hidráulicas, hornos industriales, calderas de vapor, brazos robóticos o maquinaria de packaging. Adaptamos cada solución a los requerimientos del cliente y del espacio productivo.</p>
         <p class="descripcion-sub">Nuestro enfoque incluye protocolos de prevención de riesgos, cumplimiento del marcado CE y directivas europeas. Garantizamos calidad, seguridad y trazabilidad en cada proyecto, con documentación técnica detallada.</p>
         <p class="descripcion-sub">También ejecutamos reformas, ampliaciones o reubicaciones de líneas ya existentes. Contamos con experiencia multisectorial y un enfoque personalizado para cada cliente.</p>
 
-        <div style="text-align: center;">
-  <a href="index.html" class="boton-volver-servicios">
-    <i class="fas fa-arrow-left"></i> Volver al catálogo de servicios
-  </a>
+        <!-- Bloque moderno con iconos y CTA -->
+        <div class="descripcion-sub" style="margin-top: 1.5rem;">
+          <div style="display: grid; gap: 1rem;">
+            <div style="display: flex; align-items: center;">
+              <i class="fas fa-bolt" style="margin-right: 0.8rem; color: #00f0ff;"></i>
+              <span><strong>Montaje ágil y sin sorpresas:</strong> eficiencia sin renunciar a la seguridad.</span>
+            </div>
+            <div style="display: flex; align-items: center;">
+              <i class="fas fa-user-shield" style="margin-right: 0.8rem; color: #00f0ff;"></i>
+              <span><strong>Equipo cualificado:</strong> PRL, trabajos en altura y formación continua.</span>
+            </div>
+            <div style="display: flex; align-items: center;">
+              <i class="fas fa-certificate" style="margin-right: 0.8rem; color: #00f0ff;"></i>
+              <span><strong>Materiales top:</strong> marcas líderes y certificaciones CE.</span>
+            </div>
+            <div style="display: flex; align-items: center;">
+              <i class="fas fa-file-alt" style="margin-right: 0.8rem; color: #00f0ff;"></i>
+              <span><strong>Documentación técnica completa:</strong> todo bajo control desde el minuto uno.</span>
+            </div>
+            <div style="display: flex; align-items: center;">
+              <i class="fas fa-tools" style="margin-right: 0.8rem; color: #00f0ff;"></i>
+              <span><strong>Seguimiento y soporte:</strong> nos quedamos hasta que todo funcione como un reloj.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="descripcion-sub" style="margin-top: 2.5rem; text-align: center;">
+  <p style="
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #00f0ff;
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+    margin-bottom: 0.5rem;
+  ">
+    ¿Tienes un reto industrial?
+  </p>
+  <p style="
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+  ">
+    <em>La solución la montamos nosotros.</em>
+  </p>
 </div>
 
+
+        <div style="text-align: center;">
+          <a href="index.html" class="boton-volver-servicios">
+            <i class="fas fa-arrow-left"></i> Volver al catálogo de servicios
+          </a>
+        </div>
       </div>
     </section>
   </main>

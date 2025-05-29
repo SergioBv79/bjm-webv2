@@ -1911,6 +1911,10 @@ main.bienvenida {
   .valores-lista li {
     font-size: 1rem;
   }
+
+  .intro-destacada {
+   text-align: justify; 
+  }
 }
 
 
