@@ -3,20 +3,147 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maquinaria</title>
+  <title>Mantenimiento Preventivo</title>
   <link rel="stylesheet" href="../css/estilos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" />
   <link rel="icon" href="../icons/favicons/favicon.ico" type="image/x-icon" />
+
+<style>
+    
+
+    .subseccion-magica {
+      background-color: #0b214a;
+      padding: 2rem 2rem 3rem;
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+      min-height: 520px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .galeria-giratoria {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .tarjeta-foto {
+      width: 220px;
+      height: 340px;
+      background-color: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 12px rgba(0,240,255,0.4);
+      animation: girar-foto 2.8s ease-out forwards;
+      transform: rotateY(1080deg);
+      opacity: 0;
+    }
+
+    .tarjeta-foto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes girar-foto {
+      0% { transform: rotateY(1080deg); opacity: 0; }
+      100% { transform: rotateY(0deg); opacity: 1; }
+    }
+
+    .texto-subseccion {
+      max-width: 800px;
+      padding: 1rem;
+    }
+
+    .titulo-subseccion {
+      font-size: 2.2rem;
+      color: #00f0ff;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .descripcion-sub {
+      text-align: justify;
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    .boton-volver-servicios {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #00f0ff;
+      color: #0b214a;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .boton-volver-servicios:hover {
+      background-color: #00c8dd;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .galeria-giratoria {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .tarjeta-foto {
+        width: 90%;
+        height: auto;
+      }
+
+      .titulo-subseccion {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+
+  
 </head>
 <body>
   <header id="header"></header>
 
-  <main class="pagina-construccion">
-    <h1>🚧 Página en construcción</h1>
-    <p>Estamos preparando la sección <strong>Maquinaria</strong> con todos los detalles.</p>
+<main>
+    <section class="subseccion-magica">
+      <div class="galeria-giratoria">
+        <div class="tarjeta-foto"><img src="../img/maquinaria industrial 7.jpg" alt="Instalaciones industriales"></div>
+        <div class="tarjeta-foto"><img src="../img/maquinaria industrial 3.jpg" alt="Componentes eléctricos"></div>
+        <div class="tarjeta-foto"><img src="../img/maquinaria industrial 2.jpg" alt="Cuadros automatizados"></div>
+      </div>
+
+      <div class="texto-subseccion">
+        <h2 class="titulo-subseccion">Montaje de Maquinaria Industrial</h2>
+        <p class="descripcion-sub">Somos especialistas en el montaje integral de líneas de producción industrial, adaptadas a sectores como alimentación, automoción, cosmética, farmacéutico y logístico. Nuestro equipo técnico ofrece soluciones llave en mano, desde el diseño hasta la puesta en marcha.</p>
+        <p class="descripcion-sub">Realizamos la instalación de maquinaria y componentes eléctricos, integración de autómatas programables, sensores, variadores y controladores industriales. Colaboramos con marcas líderes como Siemens, Schneider, Omron o Festo, utilizando materiales certificados.</p>
+        <p class="descripcion-sub">Nuestro enfoque incluye protocolos de prevención de riesgos, cumplimiento del marcado CE y directivas europeas. Garantizamos calidad, seguridad y trazabilidad en cada proyecto, con documentación técnica detallada.</p>
+        <p class="descripcion-sub">También ejecutamos reformas, ampliaciones o reubicaciones de líneas ya existentes. Contamos con experiencia multisectorial y un enfoque personalizado para cada cliente.</p>
+
+        <div style="text-align: center;">
+  <a href="index.html" class="boton-volver-servicios">
+    <i class="fas fa-arrow-left"></i> Volver al catálogo de servicios
+  </a>
+</div>
+
+      </div>
+    </section>
   </main>
 
+  <button id="btn-top" title="Volver arriba">&#8679;</button>
   <footer id="footer"></footer>
 
   <script src="../js/header.js"></script>
