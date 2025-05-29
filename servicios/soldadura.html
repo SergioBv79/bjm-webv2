@@ -10,18 +10,17 @@
   <link rel="icon" href="../icons/favicons/favicon.ico" type="image/x-icon" />
 
   <style>
-   .subseccion-magica {
-  background-color: #0b214a;
-  padding: 2rem 2rem 3rem; /* 🔼 reducido el top a 2rem y mantenido el bottom generoso */
-  color: #fff;
-  overflow: hidden;
-  position: relative;
-  min-height: 520px;
-  display: flex;
-  align-items: flex-start; /* 🔼 sube el contenido */
-  justify-content: center;
-}
-
+    .subseccion-magica {
+      background-color: #0b214a;
+      padding: 2rem 2rem 3rem;
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+      min-height: 520px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
 
     .contenedor-flexible {
       display: flex;
@@ -101,92 +100,53 @@
       }
     }
 
-     @media (max-width: 768px) {
-    .subseccion-magica {
-      padding: 2rem 1rem 3rem;
-    }
-
-    .contenedor-flexible {
-      flex-direction: column;
-      align-items: stretch;
-    }
-
-    .bombardeo-imagenes {
-      width: 100%;
-      height: auto;
-      margin-bottom: 1.5rem;
-    }
-
-    .foto-bomba {
-      width: 100%;
-      height: auto;
-      max-height: 300px;
-      object-fit: cover;
-    }
-
-    .texto-subseccion {
-      max-width: 100%;
-    }
-
-    .titulo-subseccion {
-      font-size: 1.8rem;
-      text-align: center;
-    }
-
-    .descripcion-sub {
-      text-align: left;
-      font-size: 1rem;
-    }
-
-    .descripcion-sub i {
-      font-size: 1.1rem !important;
-    }
     @media (max-width: 768px) {
-  .contenedor-flexible {
-    flex-direction: column;
-    align-items: center;
-  }
+      .subseccion-magica {
+        padding: 2rem 1rem 3rem;
+      }
 
-  .bombardeo-imagenes {
-    width: 100%;
-    height: auto;
-    position: relative;
-    padding-bottom: 1.5rem;
-  }
+      .contenedor-flexible {
+        flex-direction: column;
+        align-items: center;
+      }
 
-  .foto-bomba {
-    position: static;
-    width: 100%;
-    height: auto;
-    max-height: 250px;
-    object-fit: cover;
-    animation: none;
-    opacity: 1;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
-  }
+      .bombardeo-imagenes {
+        width: 100%;
+        height: 320px;
+        margin-bottom: 1.5rem;
+        position: relative;
+      }
 
-  .texto-subseccion {
-    padding: 0 1rem;
-    max-width: 100%;
-  }
+      .foto-bomba {
+        position: absolute;
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        animation: aparecer 0.6s forwards;
+        opacity: 0;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+      }
 
-  .titulo-subseccion {
-    font-size: 1.8rem;
-    text-align: center;
-  }
+      .texto-subseccion {
+        padding: 0 1rem;
+        max-width: 100%;
+      }
 
-  .descripcion-sub {
-    font-size: 1rem;
-    text-align: left;
-  }
+      .titulo-subseccion {
+        font-size: 1.8rem;
+        text-align: center;
+      }
 
-  .descripcion-sub i {
-    font-size: 1.1rem !important;
-  }
-}
+      .descripcion-sub {
+        font-size: 1rem;
+        text-align: left;
+      }
 
-  }
+      .descripcion-sub i {
+        font-size: 1.1rem !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -195,9 +155,7 @@
   <main>
     <section class="subseccion-magica">
       <div class="contenedor-flexible">
-        <div class="bombardeo-imagenes" id="bombardeo-soldadura">
-          <!-- Imágenes dinámicas -->
-        </div>
+        <div class="bombardeo-imagenes" id="bombardeo-soldadura"></div>
 
         <div class="texto-subseccion">
           <h2 class="titulo-subseccion">Soldadura Industrial</h2>
@@ -205,35 +163,32 @@
           <p class="descripcion-sub">Nuestro equipo especializado garantiza resultados duraderos en instalaciones industriales complejas.</p>
           <p class="descripcion-sub">Contamos con maquinaria de última generación y un equipo humano altamente cualificado para realizar trabajos de soldadura de precisión en acero al carbono, acero inoxidable y aluminio.</p>
           <p class="descripcion-sub">Nos adaptamos a las necesidades específicas de cada cliente, ofreciendo soluciones personalizadas y cumpliendo con los más altos estándares de calidad y seguridad.</p>
-       
-         <div class="descripcion-sub" style="margin-top: 1.5rem; display: flex; align-items: flex-start; gap: 0.8rem;">
-  <i class="fas fa-check-circle" style="color: #00f0ff; font-size: 1.3rem; margin-top: 0.2rem;"></i>
-  <p style="margin: 0;">Expertos en técnicas <strong>TIG, MIG</strong>, por arco manual y automatizada, adaptadas a todo tipo de materiales metálicos.</p>
-</div>
 
+          <div class="descripcion-sub" style="margin-top: 1.5rem; display: flex; align-items: flex-start; gap: 0.8rem;">
+            <i class="fas fa-check-circle" style="color: #00f0ff; font-size: 1.3rem; margin-top: 0.2rem;"></i>
+            <p style="margin: 0;">Expertos en técnicas <strong>TIG, MIG</strong>, por arco manual y automatizada, adaptadas a todo tipo de materiales metálicos.</p>
+          </div>
 
-<div class="descripcion-sub" style="display: flex; align-items: flex-start; gap: 0.8rem;">
-  <i class="fas fa-tools" style="color: #00f0ff; font-size: 1.3rem; margin-top: 0.2rem;"></i>
-  <p style="margin: 0;">Soldadoras de última generación, <strong>control de calidad por ultrasonido</strong> y cámaras térmicas para asegurar soldaduras impecables.</p>
-</div>
+          <div class="descripcion-sub" style="display: flex; align-items: flex-start; gap: 0.8rem;">
+            <i class="fas fa-tools" style="color: #00f0ff; font-size: 1.3rem; margin-top: 0.2rem;"></i>
+            <p style="margin: 0;">Soldadoras de última generación, <strong>control de calidad por ultrasonido</strong> y cámaras térmicas para asegurar soldaduras impecables.</p>
+          </div>
 
-<div class="descripcion-sub" style="display: flex; align-items: flex-start; gap: 0.8rem;">
-  <i class="fas fa-shield-alt" style="color: #00f0ff; font-size: 1.3rem; margin-top: 0.2rem;"></i>
-  <p style="margin: 0;">Operaciones conforme a normativa <strong>UNE-EN ISO 3834</strong>, cumpliendo exigencias de seguridad en entornos industriales complejos.</p>
-</div>
+          <div class="descripcion-sub" style="display: flex; align-items: flex-start; gap: 0.8rem;">
+            <i class="fas fa-shield-alt" style="color: #00f0ff; font-size: 1.3rem; margin-top: 0.2rem;"></i>
+            <p style="margin: 0;">Operaciones conforme a normativa <strong>UNE-EN ISO 3834</strong>, cumpliendo exigencias de seguridad en entornos industriales complejos.</p>
+          </div>
 
-<div class="descripcion-sub" style="display: flex; align-items: flex-start; gap: 0.8rem;">
-  <i class="fas fa-industry" style="color: #00f0ff; font-size: 1.3rem; margin-top: 0.2rem;"></i>
-  <p style="margin: 0;">Desde estructuras metálicas hasta maquinaria alimentaria, automoción, ferroviaria y energías renovables.</p>
-</div>
+          <div class="descripcion-sub" style="display: flex; align-items: flex-start; gap: 0.8rem;">
+            <i class="fas fa-industry" style="color: #00f0ff; font-size: 1.3rem; margin-top: 0.2rem;"></i>
+            <p style="margin: 0;">Desde estructuras metálicas hasta maquinaria alimentaria, automoción, ferroviaria y energías renovables.</p>
+          </div>
 
         </div>
       </div>
     </section>
-    
   </main>
 
-  <!-- BOTÓN VOLVER ARRIBA -->
   <button id="btn-top" title="Volver arriba">&#8679;</button>
   <footer id="footer"></footer>
 
@@ -248,9 +203,9 @@
       const container = document.getElementById("bombardeo-soldadura");
       const imagenes = [
         "../img/soldadura industrial collage1.jpg",
-        "../img/soldadura industrial collage 2.jpg",
+        "../img/soldadduara industrial collage5.jpg",
         "../img/soldadura industrial collage 4.jpg",
-        "../img/soldadduara industrial collage5.jpg"
+        "../img/soldadura industrial collage 2.jpg"
       ];
 
       let delay = 0.1;
