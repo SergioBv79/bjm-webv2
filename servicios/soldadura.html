@@ -141,6 +141,51 @@
     .descripcion-sub i {
       font-size: 1.1rem !important;
     }
+    @media (max-width: 768px) {
+  .contenedor-flexible {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bombardeo-imagenes {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding-bottom: 1.5rem;
+  }
+
+  .foto-bomba {
+    position: static;
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    animation: none;
+    opacity: 1;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+  }
+
+  .texto-subseccion {
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+
+  .titulo-subseccion {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .descripcion-sub {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .descripcion-sub i {
+    font-size: 1.1rem !important;
+  }
+}
+
   }
   </style>
 </head>
