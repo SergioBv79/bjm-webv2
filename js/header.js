@@ -19,7 +19,7 @@ document.getElementById("header").innerHTML = `
     </a>
   </div>
   <div class="frase-banner">
-    <i class="fas fa-people-carry-box" aria-hidden="true"></i>
+    
     Personas que cuidan lo que otras personas necesitan para seguir adelante.
   </div>
 </div>
