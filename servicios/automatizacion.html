@@ -3,21 +3,269 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Automatizacion</title>
+  <title>Automatización Industrial | Control Inteligente</title>
   <link rel="stylesheet" href="../css/estilos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" />
   <link rel="icon" href="../icons/favicons/favicon.ico" type="image/x-icon" />
+  <style>
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      margin: 0;
+      background-color: #fff;
+      color: #070707;
+    }
+    .subseccion-magica {
+      background-color: #0b214a;
+      padding: 3rem 2rem 4rem;
+      position: relative;
+    }
+    .subseccion-magica::before,
+    .subseccion-magica::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, transparent, #00f0ff, transparent);
+      box-shadow: 0 0 8px #00f0ff;
+      z-index: 1;
+    }
+    .subseccion-magica::before { top: 0; }
+    .subseccion-magica::after { bottom: 0; }
+
+    .galeria-cuadros {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .cuadro-preventivo {
+      width: 280px;
+      background: linear-gradient(135deg, #0f2d5b, #143a70);
+      border-radius: 12px;
+      padding: 1.2rem;
+      color: #fff;
+      box-shadow: 0 0 12px rgba(0, 240, 255, 0.35);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+    .cuadro-preventivo:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+    }
+    .cuadro-preventivo i {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #00f0ff;
+    }
+    .cuadro-preventivo h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #00f0ff;
+    }
+    .contenido-oculto {
+      display: none;
+      margin-top: 0.8rem;
+      background-color: #112d5c;
+      padding: 0.8rem;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .cuadro-preventivo.abierto .contenido-oculto {
+      display: block;
+    }
+    .frase-final {
+      text-align: center;
+      font-size: 1.4rem;
+      padding: 2rem 1rem;
+      background: #06101f;
+      border-top: 4px solid #00f0ff;
+      margin-top: 3rem;
+      color: #eee;
+    }
+    .frase-final strong {
+      color: #00f0ff;
+      font-size: 1.5rem;
+    }
+    .boton-volver-servicios {
+      display: block;
+      margin: 2rem auto;
+      padding: 0.6rem 1.2rem;
+      background-color: #00f0ff;
+      color: #0b214a;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.3s ease;
+      max-width: max-content;
+    }
+    .boton-volver-servicios:hover {
+      background-color: #00c8dd;
+    }
+    @media (max-width: 768px) {
+      .cuadro-preventivo { width: 90%; }
+    }
+
+     body {
+      font-family: 'Rajdhani', sans-serif;
+      margin: 0;
+      background-color: #ffff;
+      color: #070707;
+    }
+
+    .hero-automatizacion {
+      position: relative;
+      height: 50vh;
+      overflow: hidden;
+      background-color: #000;
+    }
+    .hero-automatizacion video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.4);
+    }
+    .overlay-hero {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #00f0ff;
+      z-index: 2;
+      text-align: center;
+      padding: 1rem;
+    }
+    .titulo-chispas {
+      font-size: 2.8rem;
+      text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+      animation: chispa 2s ease-in-out;
+    }
+    @keyframes chispa {
+      0% { opacity: 0; transform: scale(0.5) rotate(-10deg); }
+      50% { opacity: 1; transform: scale(1.1) rotate(3deg); }
+      100% { transform: scale(1) rotate(0); }
+    }
+    .subtitulo-hero {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    .por-que-automatizar {
+      padding: 3rem 2rem;
+      background: #0b214a;
+      color: #fff;
+      text-align: center;
+    }
+    .por-que-automatizar h2 {
+      font-size: 2rem;
+      color: #00f0ff;
+    }
+    .por-que-automatizar p {
+      max-width: 800px;
+      margin: 1rem auto;
+      line-height: 1.6;
+    }
+
+    .frase-industrial {
+      background: #06101f;
+      color: #eee;
+      padding: 3rem 2rem;
+      font-size: 1.3rem;
+      text-align: center;
+      border-top: 4px solid #00f0ff;
+    }
+    .frase-industrial strong {
+      color: #00f0ff;
+    }
+  </style>
+  </style>
 </head>
 <body>
   <header id="header"></header>
+  <main>
+    <section class="hero-automatizacion">
+      <video autoplay muted loop playsinline>
+        <source src="../videos/automatizacion hero.mp4" type="video/mp4" />
+      </video>
+      <div class="overlay-hero">
+        <h1 class="titulo-chispas">Automatización Industrial</h1>
+        <p class="subtitulo-hero">Conectamos máquinas. Sincronizamos procesos. Optimizamos el mañana.</p>
+      </div>
+    </section>
 
-  <main class="pagina-construccion">
-    <h1>🚧 Página en construcción</h1>
-    <p>Estamos preparando la sección <strong>Automatizacion</strong> con todos los detalles.</p>
+    <section class="por-que-automatizar">
+      <h2>¿Por qué automatizar tu industria?</h2>
+      <p>Automatizar es transformar tu producción, ganar precisión, reducir errores humanos y elevar tu empresa al siguiente nivel.</p>
+      <p>En BJM Mantenimientos llevamos la automatización a otro nivel: sensores que predicen, máquinas que aprenden, sistemas que se comunican. Bienvenidos al presente.</p>
+    </section>
+
+    <section class="frase-industrial">
+      <p><strong>Un buen operario no se reemplaza.</strong> Se potencia.<br> Nosotros no cambiamos personas por automatismos: les damos superpoderes con tecnología.</p>
+    </section>
   </main>
-
+    <section class="subseccion-magica">
+      <div class="galeria-cuadros">
+        <div class="cuadro-preventivo" onclick="toggleCard(this)">
+          <i class="fas fa-brain"></i>
+          <h3>Automatización inteligente</h3>
+          <p>Procesos que piensan por ti.</p>
+          <div class="contenido-oculto">
+            <p>Incorporamos IA industrial, sensores y actuadores para decisiones automatizadas en tiempo real.</p>
+          </div>
+        </div>
+        <div class="cuadro-preventivo" onclick="toggleCard(this)">
+          <i class="fas fa-network-wired"></i>
+          <h3>Integración de sistemas</h3>
+          <p>Todo conectado, todo bajo control.</p>
+          <div class="contenido-oculto">
+            <p>Conectamos máquinas, PLCs, SCADA, y ERP en una red inteligente y centralizada.</p>
+          </div>
+        </div>
+        <div class="cuadro-preventivo" onclick="toggleCard(this)">
+          <i class="fas fa-chart-line"></i>
+          <h3>Monitorización remota</h3>
+          <p>Controla tu planta desde cualquier lugar.</p>
+          <div class="contenido-oculto">
+            <p>Instalamos dashboards web y apps móviles para ver en tiempo real los KPIs de producción.</p>
+          </div>
+        </div>
+        <div class="cuadro-preventivo" onclick="toggleCard(this)">
+          <i class="fas fa-cogs"></i>
+          <h3>Mantenimiento predictivo</h3>
+          <p>Evita fallos antes de que ocurran.</p>
+          <div class="contenido-oculto">
+            <p>Detectamos anomalías con sensores IoT y software de análisis anticipado.</p>
+          </div>
+        </div>
+      </div>
+      <p class="frase-final">
+        Automatiza, controla, evoluciona. <strong>El futuro ya está conectado.</strong>
+      </p>
+      <a href="index.html" class="boton-volver-servicios">
+        <i class="fas fa-arrow-left"></i> Volver al catálogo de servicios
+      </a>
+    </section>
+  </main>
+  <button id="btn-top" title="Volver arriba">&#8679;</button>
   <footer id="footer"></footer>
+
+  <audio id="chispaAudio" src="../audios/automatizacion.cabeza-de-robot-001-81422.mp3" preload="auto"></audio>
+  <script>
+    function toggleCard(el) {
+      el.classList.toggle('abierto');
+      document.getElementById("chispaAudio").play();
+    }
+  </script>
 
   <script src="../js/header.js"></script>
   <script src="../js/footer.js"></script>
@@ -26,3 +274,4 @@
   <script src="../js/menu.js"></script>
 </body>
 </html>
+
