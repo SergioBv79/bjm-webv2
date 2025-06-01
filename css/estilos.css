@@ -563,7 +563,7 @@ main + footer {
   text-align: center;       /* 🧭 centrado horizontal */
   line-height: 1.2;
   letter-spacing: 0.3px;
-  color: #111;
+  color: #fdfdfd;
 }
 
   .menu-principal {
@@ -787,18 +787,19 @@ main.bienvenida {
     border-radius: 0;
   }
 
-  .btn-solicita,
-  .btn-experto {
-    flex: 1;
-    min-width: 48%;
-    margin: 0;
-    border-radius: 50px;
-    white-space: nowrap;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.btn-solicita,
+.btn-experto {
+  flex: 1;
+  min-width: auto;              /* ✅ permite que el ancho crezca según necesidad */
+  padding: 0.6rem 1.2rem;        /* ✅ da más espacio interno al texto */
+  border-radius: 50px;
+  white-space: nowrap;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 }
 
 
