@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Montaje y Desmontaje de Maquinaria</title>
+  <link rel="stylesheet" href="../css/estilos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" />
+  <link rel="icon" href="../icons/favicons/favicon.ico" type="image/x-icon" />
+  <style>
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      margin: 0;
+      background-color: #f3f4f4;
+      color: #070707;
+    }
+
+    .hero-video {
+      position: relative;
+      height: 45vh;
+      overflow: hidden;
+    }
+
+    .hero-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .titulo-centrado {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #00f0ff;
+      text-shadow: 2px 2px 6px #000;
+      z-index: 2;
+      padding: 0 1rem;
+      text-align: center;
+    }
+
+    .titulo-centrado h1 {
+      font-size: 2.8rem;
+      margin: 0.5rem 0;
+      animation: chispa 2s ease-in-out forwards;
+    }
+
+    @keyframes chispa {
+      0% { opacity: 0; transform: scale(0.8) rotate(-2deg); }
+      100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    }
+
+    .linea-azul-brillante {
+      height: 4px;
+      background: linear-gradient(to right, transparent, #00f0ff, transparent);
+      box-shadow: 0 0 8px #00f0ff;
+    }
+
+    .subseccion-magica {
+      background-color: #0b214a;
+      padding: 3rem 2rem 4rem;
+      position: relative;
+    }
+
+    .subseccion-magica::before,
+    .subseccion-magica::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, transparent, #00f0ff, transparent);
+      box-shadow: 0 0 8px #00f0ff;
+      z-index: 1;
+    }
+
+    .subseccion-magica::before {
+      top: 0;
+    }
+
+    .subseccion-magica::after {
+      bottom: 0;
+    }
+
+    .galeria-cuadros {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .cuadro-preventivo {
+      width: 280px;
+      background: linear-gradient(135deg, #0f2d5b, #143a70);
+      border-radius: 12px;
+      padding: 1.2rem;
+      color: #fff;
+      box-shadow: 0 0 12px rgba(0, 240, 255, 0.35);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .cuadro-preventivo:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+    }
+
+    .cuadro-preventivo i {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #00f0ff;
+    }
+
+    .cuadro-preventivo h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #00f0ff;
+    }
+
+    .contenido-oculto {
+      display: none;
+      margin-top: 0.8rem;
+      background-color: #112d5c;
+      padding: 0.8rem;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .cuadro-preventivo.abierto .contenido-oculto {
+      display: block;
+    }
+
+    .frase-final {
+      text-align: center;
+      font-size: 1.4rem;
+      padding: 2rem 1rem;
+      background: #06101f;
+      border-top: 4px solid #00f0ff;
+      margin-top: 3rem;
+      color: #eee;
+    }
+
+    .frase-final strong {
+      color: #00f0ff;
+      font-size: 1.5rem;
+    }
+
+    .boton-volver-servicios {
+      display: block;
+      margin: 2rem auto;
+      padding: 0.6rem 1.2rem;
+      background-color: #00f0ff;
+      color: #0b214a;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.3s ease;
+      max-width: max-content;
+    }
+
+    .boton-volver-servicios:hover {
+      background-color: #00c8dd;
+    }
+
+    #btn-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #00f0ff;
+      border: none;
+      padding: 0.6rem 1rem;
+      font-size: 1.2rem;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+    }
+
+    @media (max-width: 768px) {
+      .titulo-centrado h1 { font-size: 2rem; }
+      .hero-video { height: 35vh; }
+      .cuadro-preventivo { width: 90%; }
+    }
+  </style>
+</head>
+<body>
+  <header id="header"></header>
+  <div class="linea-azul-brillante"></div>
+
+  <main>
+    <section class="hero-video">
+      <video autoplay muted loop playsinline>
+        <source src="../videos/desmontaje hero.mp4" type="video/mp4" />
+      </video>
+      <div class="titulo-centrado">
+        <h1>Montaje y Desmontaje de Maquinaria</h1>
+      </div>
+    </section>
+
+    <section class="subseccion-magica">
+      <div class="galeria-cuadros">
+        <div class="cuadro-preventivo" onclick="toggleCard(this)">
+          <i class="fas fa-industry"></i>
+          <h3>Montajes industriales</h3>
+          <p>Instalamos equipos de producción.</p>
+          <div class="contenido-oculto">
+            <p>Desde cintas transportadoras hasta prensas hidráulicas, montamos maquinaria pesada con precisión quirúrgica. Respetamos normativas de seguridad, trazamos planos previos y usamos herramientas de alta gama.</p>
+          </div>
+        </div>
+
+        <div class="cuadro-preventivo" onclick="toggleCard(this)">
+          <i class="fas fa-tools"></i>
+          <h3>Desmontajes técnicos</h3>
+          <p>Lo desmontamos sin romper nada.</p>
+          <div class="contenido-oculto">
+            <p>Documentamos y etiquetamos cada conexión para que el remontaje sea un éxito. Ideal para traslados, reformas o renovación de maquinaria obsoleta.</p>
+          </div>
+        </div>
+
+        <div class="cuadro-preventivo" onclick="toggleCard(this)">
+          <i class="fas fa-truck-loading"></i>
+          <h3>Traslado y reubicación</h3>
+          <p>Movemos maquinaria entre naves.</p>
+          <div class="contenido-oculto">
+            <p>Planificamos cada etapa: desmontaje, transporte, izado, nivelación y montaje final. Coordinamos con transportistas y equipos de elevación.</p>
+          </div>
+        </div>
+
+        <div class="cuadro-preventivo" onclick="toggleCard(this)">
+          <i class="fas fa-cogs"></i>
+          <h3>Calibración y ajuste</h3>
+          <p>Máxima precisión operativa.</p>
+          <div class="contenido-oculto">
+            <p>Una vez montada, calibramos la maquinaria para un rendimiento óptimo: ajustes mecánicos, test eléctricos y puesta en marcha controlada.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="frase-final">
+        Precisión, fuerza y coordinación. <strong>Montamos la base de tu éxito industrial.</strong>
+      </p>
+      <a href="index.html" class="boton-volver-servicios">
+        <i class="fas fa-arrow-left"></i> Volver al catálogo de servicios
+      </a>
+    </section>
+  </main>
+
+  <button id="btn-top" title="Volver arriba">&#8679;</button>
+  <footer id="footer"></footer>
+
+  <script>
+    function toggleCard(card) {
+      card.classList.toggle("abierto");
+    }
+
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('btn-top');
+      btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+
+    document.getElementById('btn-top').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+  <script src="../js/header.js"></script>
+  <script src="../js/footer.js"></script>
+  <script src="../js/scripts.js"></script>
+  <script src="../js/cookies.js"></script>
+  <script src="../js/menu.js"></script>
+</body>
+</html>
