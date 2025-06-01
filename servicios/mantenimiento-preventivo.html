@@ -3,26 +3,304 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mantenimiento Preventivo</title>
-  <link rel="stylesheet" href="../css/estilos.css" />
+  <title>Mantenimiento Preventivo | BJM</title>
+ <link rel="stylesheet" href="../css/estilos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" />
   <link rel="icon" href="../icons/favicons/favicon.ico" type="image/x-icon" />
+  <style>
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      margin: 0;
+    }
+    .hero-video {
+      position: relative;
+      height: 45vh;
+      overflow: hidden;
+    }
+    .hero-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .titulo-centrado {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 2;
+    }
+    .titulo-centrado h1 {
+      color: #00f0ff;
+      font-size: 2.8rem;
+      text-shadow: 2px 2px 6px #000;
+      padding: 0 1rem;
+      margin: 0;
+      animation: aparecer 1.4s ease-out forwards;
+    }
+    @keyframes aparecer {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .subseccion-magica {
+      background-color: #0b214a;
+      padding: 2rem 2rem 4rem;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .subseccion-magica::before,
+    .subseccion-magica::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, transparent, #00f0ff, transparent);
+      box-shadow: 0 0 8px #00f0ff;
+      z-index: 1;
+    }
+    .subseccion-magica::before { top: 0; }
+    .subseccion-magica::after { bottom: 0; }
+    .contenedor-texto {
+      max-width: 850px;
+      margin: 0 auto 3rem;
+    }
+    .contenedor-texto h2 {
+      color: #00f0ff;
+      font-size: 2.3rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .contenedor-texto p,
+    .contenedor-texto li {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      text-align: justify;
+      margin-bottom: 1rem;
+    }
+    .tabla-comparativa {
+      background-color: #112d5c;
+      border-collapse: collapse;
+      width: 100%;
+      margin: 2rem auto;
+    }
+    .tabla-comparativa th,
+    .tabla-comparativa td {
+      border: 1px solid #00f0ff;
+      padding: 0.8rem;
+      text-align: left;
+    }
+    .tabla-comparativa th {
+      background-color: #143a70;
+      color: #00f0ff;
+    }
+    .galeria-cuadros {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    .cuadro-preventivo {
+      width: 280px;
+      background: linear-gradient(135deg, #0f2d5b, #143a70);
+      border-radius: 12px;
+      padding: 1.2rem;
+      color: #fff;
+      box-shadow: 0 0 12px rgba(0, 240, 255, 0.35);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+    .cuadro-preventivo:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+    }
+    .cuadro-preventivo i {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #00f0ff;
+    }
+    .cuadro-preventivo h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #00f0ff;
+    }
+    .contenido-oculto {
+      display: none;
+      margin-top: 0.8rem;
+      background-color: #112d5c;
+      padding: 0.8rem;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .cuadro-preventivo.abierto .contenido-oculto {
+      display: block;
+    }
+    .boton-volver-servicios {
+      display: block;
+      margin: 3rem auto 1rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #00f0ff;
+      color: #0b214a;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.3s ease;
+      max-width: max-content;
+    }
+    .boton-volver-servicios:hover {
+      background-color: #00c8dd;
+    }
+    @media (max-width: 768px) {
+      .hero-video {
+        height: 30vh;
+      }
+      .titulo-centrado h1 {
+        font-size: 1.8rem;
+      }
+      .contenedor-texto h2 {
+        font-size: 1.8rem;
+      }
+      .contenedor-texto p {
+        font-size: 1rem;
+      }
+      .cuadro-preventivo {
+        width: 90%;
+      }
+    }
+  </style>
 </head>
 <body>
   <header id="header"></header>
-
-  <main class="pagina-construccion">
-    <h1>🚧 Página en construcción</h1>
-    <p>Estamos preparando la sección <strong>Mantenimiento Preventivo</strong> con todos los detalles.</p>
+  <main>
+    <section class="hero-video">
+      <video autoplay muted loop playsinline>
+        <source src="../videos/video mantenimiento preventivo.mp4" type="video/mp4" />
+      </video>
+      <div class="titulo-centrado">
+        <h1>Mantenimiento Preventivo</h1>
+      </div>
+    </section>
+    <section class="subseccion-magica">
+      <div class="contenedor-texto">
+        <h2>¿Qué es el mantenimiento preventivo en la industria?</h2>
+        <p>El mantenimiento preventivo industrial es una estrategia que busca anticiparse a los fallos mediante revisiones programadas, sustitución de componentes antes de que fallen y ajustes periódicos. Esto permite prolongar la vida útil de los equipos, evitar paradas imprevistas y reducir costes a largo plazo. Uno de los enfoques actuales más eficaces es el <strong>retrofitting</strong>, una técnica que moderniza máquinas existentes para adaptarlas a nuevos estándares de seguridad, eficiencia energética y productividad.</p>
+      </div>
+      <div class="contenedor-texto">
+        <h2>GMAO: Gestión de Mantenimiento Asistido por Ordenador (CMMS)</h2>
+        <p><strong>GMAO</strong>, o en inglés <em>CMMS – Computerized Maintenance Management System</em>, es un tipo de software diseñado para automatizar, centralizar y gestionar digitalmente las operaciones de mantenimiento. En BJM, utilizamos GMAO para planificar mantenimientos, hacer seguimiento de incidencias, registrar repuestos utilizados y generar informes técnicos en tiempo real.</p>
+        <p>Gracias a estas herramientas mejoramos la trazabilidad, reducimos errores humanos, y tomamos decisiones basadas en datos. El sistema nos permite aplicar un enfoque proactivo que mejora la seguridad, alarga la vida útil de los activos y garantiza el cumplimiento normativo.</p>
+        <table class="tabla-comparativa">
+          <tr>
+            <th>Aspecto</th>
+            <th>Mantenimiento Tradicional</th>
+            <th>Mantenimiento con GMAO</th>
+          </tr>
+          <tr>
+            <td>Registro de tareas</td>
+            <td>Papel / Excel</td>
+            <td>Digital, trazable y centralizado</td>
+          </tr>
+          <tr>
+            <td>Alertas y planificación</td>
+            <td>Manual</td>
+            <td>Automatizada</td>
+          </tr>
+          <tr>
+            <td>Historial técnico</td>
+            <td>Disperso o incompleto</td>
+            <td>Consolidado en tiempo real</td>
+          </tr>
+          <tr>
+            <td>Control de stock</td>
+            <td>No integrado</td>
+            <td>Gestión de almacén en la misma plataforma</td>
+          </tr>
+          <tr>
+            <td>Informes</td>
+            <td>Limitados</td>
+            <td>Automáticos y detallados</td>
+          </tr>
+        </table>
+      </div>
+      <div class="galeria-cuadros">
+        <div class="cuadro-preventivo" onclick="this.classList.toggle('abierto')">
+          <i class="fas fa-cogs"></i>
+          <h3>Inspección Programada</h3>
+          <p>Detectamos desgaste y fallos antes de que ocurran.</p>
+          <div class="contenido-oculto">
+            <p>Controlamos estado de rodamientos, ejes, correas, piezas móviles, engranajes y sensores. Creamos rutas de inspección digitalizadas con checklists adaptados por tipo de instalación.</p>
+          </div>
+        </div>
+        <div class="cuadro-preventivo" onclick="this.classList.toggle('abierto')">
+          <i class="fas fa-tools"></i>
+          <h3>Protocolos Técnicos</h3>
+          <p>Aplicamos normas internacionales de mantenimiento industrial.</p>
+          <div class="contenido-oculto">
+            <p>Trabajamos bajo normativa ISO, PRL, y recomendaciones del fabricante. Documentamos procedimientos, controles de par y calibraciones para equipos críticos.</p>
+          </div>
+        </div>
+        <div class="cuadro-preventivo" onclick="this.classList.toggle('abierto')">
+          <i class="fas fa-chart-line"></i>
+          <h3>Optimización de Costes</h3>
+          <p>Menos averías, menos paradas, más productividad.</p>
+          <div class="contenido-oculto">
+            <p>Con mantenimiento preventivo optimizado, reducimos el coste por parada y alargamos la vida útil de máquinas y componentes. Analizamos ratios de fallo para ajustar frecuencias.</p>
+          </div>
+        </div>
+        <div class="cuadro-preventivo" onclick="this.classList.toggle('abierto')">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Seguridad y PRL</h3>
+          <p>Minimizamos riesgos y cumplimos normativas de prevención.</p>
+          <div class="contenido-oculto">
+            <p>El mantenimiento preventivo evita accidentes por fallos eléctricos o mecánicos. Cumplimos con la Ley de PRL, formación de personal y señalización conforme a normativa vigente.</p>
+          </div>
+        </div>
+        <div class="cuadro-preventivo" onclick="this.classList.toggle('abierto')">
+          <i class="fas fa-handshake"></i>
+          <h3>Externalización del Mantenimiento</h3>
+          <p>Delegas en profesionales. Control sin complicaciones.</p>
+          <div class="contenido-oculto">
+            <p><strong>✔ Menos costes fijos:</strong> olvídate de nóminas y bajas inesperadas.</p>
+            <p><strong>✔ Flexibilidad:</strong> adaptamos equipos y horarios a tu producción.</p>
+            <p><strong>✔ Información clara:</strong> acceso a partes, informes y métricas en tiempo real.</p>
+          </div>
+        </div>
+      </div>
+      <a href="index.html" class="boton-volver-servicios">
+        <i class="fas fa-arrow-left"></i> Volver al catálogo de servicios
+      </a>
+    </section>
   </main>
-
+  <button id="btn-top" title="Volver arriba">&#8679;</button>
   <footer id="footer"></footer>
 
-  <script src="../js/header.js"></script>
+   <script src="../js/header.js"></script>
   <script src="../js/footer.js"></script>
   <script src="../js/scripts.js"></script>
   <script src="../js/cookies.js"></script>
   <script src="../js/menu.js"></script>
+
+  <script>
+    // Scroll a top
+    const btnTop = document.getElementById("btn-top");
+    window.onscroll = () => {
+      if (window.scrollY > 200) {
+        btnTop.style.display = "block";
+      } else {
+        btnTop.style.display = "none";
+      }
+    };
+    btnTop.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  </script>
+  <button id="btn-top" title="Volver arriba">&#8679;</button>
 </body>
 </html>
