@@ -9,17 +9,20 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" />
   <link rel="icon" href="../icons/favicons/favicon.ico" type="image/x-icon" />
 
-  <style>
+   <style>
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
     .subseccion-magica {
       background-color: #0b214a;
       padding: 2rem 2rem 3rem;
       color: #fff;
-      overflow: hidden;
       position: relative;
-      min-height: 520px;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
     }
 
     .subseccion-magica::before,
@@ -52,16 +55,14 @@
     }
 
     .bombardeo-imagenes {
-  position: relative;
-  width: 460px;
-  height: 320px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: -2rem; /* 👈 NUEVO: esto sube la cascada */
-}
-
+      position: relative;
+      width: 460px;
+      height: 320px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
     .foto-bomba {
       position: absolute;
@@ -90,27 +91,28 @@
     .titulo-subseccion {
       font-size: 2.2rem;
       color: #00f0ff;
-      opacity: 0;
-      transform: translateX(-100%);
       animation: entrar-titulo 1s ease-out forwards;
-      animation-delay: 7.2s;
       text-align: left;
     }
 
     .descripcion-sub {
-      opacity: 0;
-      transform: translateY(20px);
       animation: texto-aparece 0.8s ease-out forwards;
       text-align: justify;
     }
 
-    .descripcion-sub:nth-of-type(1) { animation-delay: 7.7s; }
-    .descripcion-sub:nth-of-type(2) { animation-delay: 8.2s; }
-    .descripcion-sub:nth-of-type(3) { animation-delay: 8.7s; }
+    @keyframes texto-aparece {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes entrar-titulo {
+      from { opacity: 0; transform: translateX(-100%); }
+      to { opacity: 1; transform: translateX(0); }
+    }
 
     .boton-volver-servicios {
       display: inline-block;
-      margin: 1rem 0 2rem;
+      margin: 2rem 0;
       padding: 0.5rem 1rem;
       background-color: #00f0ff;
       color: #0b214a;
@@ -120,81 +122,32 @@
       transition: background 0.3s ease;
     }
 
-    .boton-volver-servicios i {
-      margin-right: 0.2rem;
-    }
-
     .boton-volver-servicios:hover {
       background-color: #00c8dd;
     }
 
-    @keyframes texto-aparece {
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    @keyframes entrar-titulo {
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-
     @media (max-width: 768px) {
-      .subseccion-magica {
-        padding: 2rem 1rem 3rem;
-      }
-
       .contenedor-flexible {
         flex-direction: column;
         align-items: center;
       }
 
       .bombardeo-imagenes {
-       width: 100%;
-    height: 320px;
-    margin-bottom: 1.5rem;
-    margin-top: 2rem; /* 👈 Nuevo espacio entre el header y la cascada */
-    position: relative;
-  }
+        width: 100%;
+        height: 320px;
+        margin-bottom: 1.5rem;
+      }
 
       .foto-bomba {
         width: 100%;
         height: 320px;
         object-fit: cover;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
-      }
-
-      .texto-subseccion {
-        padding: 0 1rem;
-        max-width: 100%;
       }
 
       .titulo-subseccion {
         font-size: 1.8rem;
         text-align: center;
       }
-
-      .descripcion-sub {
-        font-size: 1rem;
-        text-align: justify;
-      }
-
-      .descripcion-sub i {
-        font-size: 1.1rem !important;
-      }
-      @media (max-width: 768px) {
-      .boton-volver-servicios {
-    display: block;
-    margin: 2rem auto 0;
-    text-align: center;
-  }
-}
-
-
     }
   </style>
 </head>
