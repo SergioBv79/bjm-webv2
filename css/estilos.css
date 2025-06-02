@@ -18,13 +18,36 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(135deg, #003a80, #0070f3, #003a80); /* Azul eléctrico con brillo */
+  background: linear-gradient(
+  90deg,
+  #000c1f,
+  #003b6f,
+  #0077cc,
+  #003b6f,
+  #000c1f
+);
+background-size: 400% 400%;
+animation: brillo-banner 15s ease infinite; /* Azul eléctrico con brillo */
   padding: 0.6rem 1.5rem;
   font-family: 'Rajdhani', sans-serif;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   color: #fff;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
+
+
+@keyframes brillo-banner {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 
 .banner-top .logo img {
