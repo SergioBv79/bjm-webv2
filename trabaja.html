@@ -3,33 +3,198 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Página en construcción</title>
-  <link rel="icon" href="icons/favicons/favicon.ico" type="image/x-icon">
+  <title>Trabaja con nosotros | BJM Mantenimientos</title>
   <link rel="stylesheet" href="css/estilos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
-  <script src="js/header.js" defer></script>
-  <script src="js/footer.js" defer></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" />
+  <link rel="icon" href="icons/favicons/favicon.ico" type="image/x-icon" />
+  <style>
+    .hero-trabaja {
+      position: relative;
+      width: 100%;
+      height: 80vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0b0b0b;
+    }
+    .hero-trabaja video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      
+    }
+    .texto-hero {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 4rem 2rem 0; /* aumenta el margen superior */
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.texto-hero h1 {
+  font-size: 2.8rem;        /* más grande */
+  font-weight: 700;         /* negrita */
+  margin-top: 3rem;         /* espacio después del botón */
+  margin-bottom: 1rem;
+}
+
+.texto-hero p {
+  font-size: 1.5rem;        /* también un poco más grande */
+  font-weight: 600;         /* seminegrita */
+  margin-bottom: 0;
+}
+
+    .texto-hero .boton-enviar {
+      padding: 0.8rem 2rem;
+      background-color: #ff6600;
+      color: #fff;
+      border: none;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .texto-hero .boton-enviar:hover {
+      background-color: #e65c00;
+    }
+    .texto-engagement {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #ccc;
+  text-align: left;
+}
+
+.texto-engagement p {
+  margin-bottom: 1.5rem;
+}
+
+  </style>
 </head>
 <body>
   <header id="header"></header>
 
-  <main class="pagina-construccion">
-    <h1>🚧 Esta sección está en construcción</h1>
-    <p>Estamos trabajando para traerte algo espectacular.</p>
+  <!-- 🎬 HERO CON VIDEO -->
+  <section class="hero-trabaja">
+    <video autoplay muted loop playsinline>
+      <source src="videos/vision.GPT - Trim.mp4" type="video/mp4" />
+    </video>
+    <div class="texto-hero">
+  <a href="#formulario" class="boton-enviar">Enviar candidatura</a>
+
+  <h1>Únete a la fuerza técnica de BJM</h1>
+  <p>Buscamos talento con actitud. Si eres de lxs que lo dan todo en cada jornada, este es tu sitio.</p>
+</div>
+
+  </section>
+
+  <main class="bloque-institucional animar-aparicion visible">
+    <div class="contenedor-max">
+      <h1 id="formulario"><i class="fas fa-briefcase"></i> Trabaja con nosotros</h1>
+      <p>¿Quieres formar parte de nuestro equipo? En BJM buscamos personas comprometidas, profesionales y con ganas de crecer. Rellena el formulario y da el primer paso.</p>
+      <div class="texto-engagement">
+  <p>En BJM creemos que una empresa no se construye solo con herramientas, sino con personas que lo dan todo cada día. Nuestro equipo está formado por profesionales comprometidos que saben lo que significa hacer bien el trabajo, cuidar los detalles y apoyarse mutuamente.</p>
+
+  <p>No buscamos solo currículums. Buscamos actitud, responsabilidad, respeto por el oficio y ganas de crecer. Porque aquí cada puesto cuenta, cada tarea suma, y cada persona tiene valor.</p>
+
+  <p>Ofrecemos entornos de trabajo estables, formación continua, apoyo técnico, y un ambiente donde se respira equipo. Desde soldadura hasta mantenimiento de comunidades, desde reparaciones eléctricas hasta limpieza profesional, en BJM cada servicio se hace con orgullo.</p>
+
+  <p>Si crees que encajas con nuestra manera de trabajar, no lo pienses más. Haznos llegar tu candidatura. Queremos conocerte.</p>
+</div>
+
+      <!-- 🔒 Mensaje de bloqueo por cookies -->
+      <div id="bloqueo-formulario" style="display: none;" class="bloqueo-cookies-form">
+        <p>Este formulario solo estará disponible cuando aceptes las cookies estadísticas.</p>
+        <button id="abrir-config-contacto" class="boton-enviar">Cambiar configuración de cookies</button>
+      </div>
+
+      <!-- ✅ Formulario embebido (se muestra solo si cookies estadísticas aceptadas) -->
+      <div id="formulario-contacto-wrapper">
+        <section class="formulario-contacto">
+          <div id="mensaje-gracias" class="oculto">
+            <h2><i class="fas fa-check-circle"></i> ¡Gracias por tu candidatura!</h2>
+            <p>La hemos recibido correctamente. Nos pondremos en contacto contigo si tu perfil encaja con nuestras necesidades.</p>
+          </div>
+
+          <!-- 📌 Sustituir por la URL real de tu formulario en Jotform -->
+          <iframe
+            src="https://form.jotform.com/251546837327060"
+            frameborder="0"
+            style="width: 100%; min-height: 850px; border: none;"
+            allowfullscreen>
+          </iframe>
+        </section>
+      </div>
+    </div>
   </main>
 
-  <!-- BOTÓN VOLVER ARRIBA -->
   <button id="btn-top" title="Volver arriba">&#8679;</button>
-
-  <!-- FOOTER generado por JS -->
   <footer id="footer"></footer>
 
-  <!-- Scripts -->
+  <!-- JS del sitio -->
   <script src="js/header.js"></script>
   <script src="js/footer.js"></script>
   <script src="js/scripts.js"></script>
   <script src="js/cookies.js"></script>
   <script src="js/menu.js"></script>
+
+  <!-- Control de cookies -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const elementosAnimar = document.querySelectorAll('.animar-aparicion');
+      const mostrarElemento = (entrada, observador) => {
+        entrada.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observador.unobserve(e.target);
+          }
+        });
+      };
+      const observador = new IntersectionObserver(mostrarElemento, { threshold: 0.2 });
+      elementosAnimar.forEach(el => observador.observe(el));
+
+      const wrapper = document.getElementById('formulario-contacto-wrapper');
+      const bloqueo = document.getElementById('bloqueo-formulario');
+
+      function cookiesAnaliticasAceptadas() {
+        const aceptadas = localStorage.getItem("cookies_accepted");
+        if (aceptadas === "all") return true;
+        if (aceptadas === "custom") {
+          try {
+            const personalizadas = JSON.parse(localStorage.getItem("cookies_custom"));
+            return personalizadas?.analytics === true;
+          } catch (e) {
+            return false;
+          }
+        }
+        return false;
+      }
+
+      if (cookiesAnaliticasAceptadas()) {
+        if (wrapper) wrapper.style.display = 'block';
+        if (bloqueo) bloqueo.style.display = 'none';
+      } else {
+        if (wrapper) wrapper.style.display = 'none';
+        if (bloqueo) bloqueo.style.display = 'block';
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const boton = document.getElementById("abrir-config-contacto");
+      const modal = document.getElementById("cookie-config-modal");
+      if (boton && modal) {
+        boton.addEventListener("click", () => {
+          modal.classList.remove("oculto");
+        });
+      }
+    });
+  </script>
 </body>
 </html>
