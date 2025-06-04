@@ -176,6 +176,42 @@
         width: 90%;
       }
     }
+    .tabla-responsive {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 2rem;
+  border-radius: 6px;
+}
+
+.tabla-responsive::-webkit-scrollbar {
+  height: 6px;
+}
+
+.tabla-responsive::-webkit-scrollbar-thumb {
+  background-color: #00f0ff;
+  border-radius: 3px;
+}
+
+.tabla-comparativa {
+  background-color: #112d5c;
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 600px; /* Añadido para permitir scroll */
+  margin: 0 auto;
+}
+
+.tabla-comparativa th,
+.tabla-comparativa td {
+  border: 1px solid #00f0ff;
+  padding: 0.8rem;
+  text-align: left;
+}
+
+.tabla-comparativa th {
+  background-color: #143a70;
+  color: #00f0ff;
+}
+
   </style>
 </head>
 <body>
@@ -198,38 +234,40 @@
         <h2>GMAO: Gestión de Mantenimiento Asistido por Ordenador (CMMS)</h2>
         <p><strong>GMAO</strong>, o en inglés <em>CMMS – Computerized Maintenance Management System</em>, es un tipo de software diseñado para automatizar, centralizar y gestionar digitalmente las operaciones de mantenimiento. En BJM, utilizamos GMAO para planificar mantenimientos, hacer seguimiento de incidencias, registrar repuestos utilizados y generar informes técnicos en tiempo real.</p>
         <p>Gracias a estas herramientas mejoramos la trazabilidad, reducimos errores humanos, y tomamos decisiones basadas en datos. El sistema nos permite aplicar un enfoque proactivo que mejora la seguridad, alarga la vida útil de los activos y garantiza el cumplimiento normativo.</p>
-        <table class="tabla-comparativa">
-          <tr>
-            <th>Aspecto</th>
-            <th>Mantenimiento Tradicional</th>
-            <th>Mantenimiento con GMAO</th>
-          </tr>
-          <tr>
-            <td>Registro de tareas</td>
-            <td>Papel / Excel</td>
-            <td>Digital, trazable y centralizado</td>
-          </tr>
-          <tr>
-            <td>Alertas y planificación</td>
-            <td>Manual</td>
-            <td>Automatizada</td>
-          </tr>
-          <tr>
-            <td>Historial técnico</td>
-            <td>Disperso o incompleto</td>
-            <td>Consolidado en tiempo real</td>
-          </tr>
-          <tr>
-            <td>Control de stock</td>
-            <td>No integrado</td>
-            <td>Gestión de almacén en la misma plataforma</td>
-          </tr>
-          <tr>
-            <td>Informes</td>
-            <td>Limitados</td>
-            <td>Automáticos y detallados</td>
-          </tr>
-        </table>
+        <div class="tabla-responsive">
+  <table class="tabla-comparativa">
+    <tr>
+      <th>Aspecto</th>
+      <th>Mantenimiento Tradicional</th>
+      <th>Mantenimiento con GMAO</th>
+    </tr>
+    <tr>
+      <td>Registro de tareas</td>
+      <td>Papel / Excel</td>
+      <td>Digital, trazable y centralizado</td>
+    </tr>
+    <tr>
+      <td>Alertas y planificación</td>
+      <td>Manual</td>
+      <td>Automatizada</td>
+    </tr>
+    <tr>
+      <td>Historial técnico</td>
+      <td>Disperso o incompleto</td>
+      <td>Consolidado en tiempo real</td>
+    </tr>
+    <tr>
+      <td>Control de stock</td>
+      <td>No integrado</td>
+      <td>Gestión de almacén en la misma plataforma</td>
+    </tr>
+    <tr>
+      <td>Informes</td>
+      <td>Limitados</td>
+      <td>Automáticos y detallados</td>
+    </tr>
+  </table>
+</div>
       </div>
       <div class="galeria-cuadros">
         <div class="cuadro-preventivo" onclick="this.classList.toggle('abierto')">
