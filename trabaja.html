@@ -39,14 +39,14 @@
 }
 
 .texto-hero h1 {
-  font-size: 3.8rem;        /* más grande */
+  font-size: .8rem;        /* más grande */
   font-weight: 700;         /* negrita */
   margin-top: 3rem;         /* espacio después del botón */
   margin-bottom: 1rem;
 }
 
 .texto-hero p {
-  font-size: 2.5rem;        /* también un poco más grande */
+  font-size: 1.5rem;        /* también un poco más grande */
   font-weight: 600;         /* seminegrita */
   margin-bottom: 0;
 }
@@ -76,6 +76,57 @@
   margin-bottom: 1.5rem;
 }
 
+/* Ajuste global del iframe */
+.formulario-contacto iframe {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin-left: calc(-50vw + 50%);
+  border: none;
+}
+
+/* Opcional: ajustar padding del contenedor si quieres que nada lo limite */
+#formulario-contacto-wrapper,
+.formulario-contacto {
+  padding: 0;
+  margin: 0;
+}
+
+
+@media screen and (max-width: 768px) {
+  main .contenedor-max > h1 {
+    text-align: center;
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .texto-engagement {
+    padding: 0 1rem;
+    text-align: justify;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .texto-engagement p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  /* Para centrar el texto inicial también */
+  main > .contenedor-max > p {
+    padding: 0 1rem;
+    text-align: justify;
+    max-width: 100%;
+    margin: 0 auto 2rem;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -84,7 +135,7 @@
   <!-- 🎬 HERO CON VIDEO -->
   <section class="hero-trabaja">
     <video autoplay muted loop playsinline>
-      <source src="videos/20250605_1704_Team Spirit Unveiled_storyboard_01jx09yfqce2g97bp992f8c8b8.mp4" type="video/mp4" />
+      <source src="videos/20250604_0714_Innovative Industrial Excellence_remix_01jwwnsa18ff0r2wvf04jeys4x (1).mp4" type="video/mp4" />
     </video>
     <div class="texto-hero">
   <a href="#formulario" class="boton-enviar">Enviar candidatura</a>
