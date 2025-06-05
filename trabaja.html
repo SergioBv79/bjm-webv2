@@ -17,38 +17,46 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #ffff;
+      color: #070707;
     }
     .hero-trabaja video {
       position: absolute;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      
     }
     .texto-hero {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  padding: 4rem 2rem 0; /* aumenta el margen superior */
-  max-width: 90%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.texto-hero h1 {
-  font-size: .8rem;        /* más grande */
-  font-weight: 700;         /* negrita */
-  margin-top: 3rem;         /* espacio después del botón */
-  margin-bottom: 1rem;
-}
-
-.texto-hero p {
-  font-size: 1.5rem;        /* también un poco más grande */
-  font-weight: 600;         /* seminegrita */
-  margin-bottom: 0;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 4rem 2rem 0;
+      max-width: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .texto-hero h1 {
+      font-size: 3.8rem;
+      font-weight: 700;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: #00f0ff;
+      animation: entrar-titulo 1s ease-out forwards;
+      
+    }
+    .texto-hero p {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0;
+      color: #00f0ff;
+    }
+    .caja-hero {
+  background-color: rgba(0, 0, 0, 0.65); /* fondo negro semitransparente */
+  padding: 2rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(2px); /* opcional: desenfoque del fondo */
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
 }
 
     .texto-hero .boton-enviar {
@@ -64,68 +72,61 @@
     .texto-hero .boton-enviar:hover {
       background-color: #e65c00;
     }
-    .texto-engagement {
-  margin-top: 2rem;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #ccc;
-  text-align: left;
-}
 
-.texto-engagement p {
-  margin-bottom: 1.5rem;
-}
+    /* Estilo responsive basado en la plantilla de mantenimiento correctivo */
 
-/* Ajuste global del iframe */
-.formulario-contacto iframe {
-  width: 100vw !important;
-  max-width: 100vw !important;
-  margin-left: calc(-50vw + 50%);
-  border: none;
-}
-
-/* Opcional: ajustar padding del contenedor si quieres que nada lo limite */
-#formulario-contacto-wrapper,
-.formulario-contacto {
-  padding: 0;
-  margin: 0;
-}
-
-
-@media screen and (max-width: 768px) {
-  main .contenedor-max > h1 {
-    text-align: center;
-    font-size: 1.6rem;
-    display: flex;
+@media (max-width: 768px) {
+  .hero-trabaja {
+    height: auto;
     flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+    padding: 2rem 1rem;
+    text-align: center;
   }
 
-  .texto-engagement {
-    padding: 0 1rem;
-    text-align: justify;
-    max-width: 100%;
-    margin: 0 auto;
+  .texto-hero {
+    padding: 2rem 1rem 0;
+  }
+
+  .texto-hero h1 {
+    font-size: 2rem;
+  }
+
+  .texto-hero p {
+    font-size: 1.1rem;
+  }
+
+  .texto-hero .boton-enviar {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  .caja-hero {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .bloque-institucional .contenedor-max h1 {
+    font-size: 1.6rem;
+    text-align: center;
   }
 
   .texto-engagement p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-  }
-
-  /* Para centrar el texto inicial también */
-  main > .contenedor-max > p {
-    padding: 0 1rem;
-    text-align: justify;
-    max-width: 100%;
-    margin: 0 auto 2rem;
-    font-size: 1rem;
-    line-height: 1.6;
-  }
+  font-size: 1rem;
+  text-align: justify;
+  padding: 0;
+  width: 100%;
+  max-width: none;
 }
 
+.formulario-contacto iframe {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  min-height: 700px;
+}
+}
 
   </style>
 </head>
@@ -135,13 +136,14 @@
   <!-- 🎬 HERO CON VIDEO -->
   <section class="hero-trabaja">
     <video autoplay muted loop playsinline>
-      <source src="videos/20250604_0714_Innovative Industrial Excellence_remix_01jwwnsa18ff0r2wvf04jeys4x (1).mp4" type="video/mp4" />
+      <source src="videos/20250605_2201_BJM Team Spirit_storyboard_01jx0txrebe2gb5q5k9d5cyk2v.mp4" type="video/mp4" />
     </video>
     <div class="texto-hero">
-  <a href="#formulario" class="boton-enviar">Enviar candidatura</a>
-
-  <h1>Únete a la fuerza técnica de BJM</h1>
-  <p>Buscamos talento con actitud. Si eres de lxs que lo dan todo en cada jornada, este es tu sitio.</p>
+  <div class="caja-hero">
+    <a href="#formulario" class="boton-enviar">Enviar candidatura</a>
+    <h1>Únete a la fuerza técnica de BJM</h1>
+    <p>Buscamos talento con actitud. Si eres de lxs que lo dan todo en cada jornada, este es tu sitio.</p>
+  </div>
 </div>
 
   </section>
@@ -151,22 +153,17 @@
       <h1 id="formulario"><i class="fas fa-briefcase"></i> Trabaja con nosotros</h1>
       <p>¿Quieres formar parte de nuestro equipo? En BJM buscamos personas comprometidas, profesionales y con ganas de crecer. Rellena el formulario y da el primer paso.</p>
       <div class="texto-engagement">
-  <p>En BJM creemos que una empresa no se construye solo con herramientas, sino con personas que lo dan todo cada día. Nuestro equipo está formado por profesionales comprometidos que saben lo que significa hacer bien el trabajo, cuidar los detalles y apoyarse mutuamente.</p>
+        <p>En BJM creemos que una empresa no se construye solo con herramientas, sino con personas que lo dan todo cada día. Nuestro equipo está formado por profesionales comprometidos que saben lo que significa hacer bien el trabajo, cuidar los detalles y apoyarse mutuamente.</p>
+        <p>No buscamos solo currículums. Buscamos actitud, responsabilidad, respeto por el oficio y ganas de crecer. Porque aquí cada puesto cuenta, cada tarea suma, y cada persona tiene valor.</p>
+        <p>Ofrecemos entornos de trabajo estables, formación continua, apoyo técnico, y un ambiente donde se respira equipo. Desde soldadura hasta mantenimiento de comunidades, desde reparaciones eléctricas hasta limpieza profesional, en BJM cada servicio se hace con orgullo.</p>
+        <p>Si crees que encajas con nuestra manera de trabajar, no lo pienses más. Haznos llegar tu candidatura. Queremos conocerte.</p>
+      </div>
 
-  <p>No buscamos solo currículums. Buscamos actitud, responsabilidad, respeto por el oficio y ganas de crecer. Porque aquí cada puesto cuenta, cada tarea suma, y cada persona tiene valor.</p>
-
-  <p>Ofrecemos entornos de trabajo estables, formación continua, apoyo técnico, y un ambiente donde se respira equipo. Desde soldadura hasta mantenimiento de comunidades, desde reparaciones eléctricas hasta limpieza profesional, en BJM cada servicio se hace con orgullo.</p>
-
-  <p>Si crees que encajas con nuestra manera de trabajar, no lo pienses más. Haznos llegar tu candidatura. Queremos conocerte.</p>
-</div>
-
-      <!-- 🔒 Mensaje de bloqueo por cookies -->
       <div id="bloqueo-formulario" style="display: none;" class="bloqueo-cookies-form">
         <p>Este formulario solo estará disponible cuando aceptes las cookies estadísticas.</p>
         <button id="abrir-config-contacto" class="boton-enviar">Cambiar configuración de cookies</button>
       </div>
 
-      <!-- ✅ Formulario embebido (se muestra solo si cookies estadísticas aceptadas) -->
       <div id="formulario-contacto-wrapper">
         <section class="formulario-contacto">
           <div id="mensaje-gracias" class="oculto">
@@ -174,7 +171,6 @@
             <p>La hemos recibido correctamente. Nos pondremos en contacto contigo si tu perfil encaja con nuestras necesidades.</p>
           </div>
 
-          <!-- 📌 Sustituir por la URL real de tu formulario en Jotform -->
           <iframe
             src="https://form.jotform.com/251554138231350"
             frameborder="0"
@@ -195,57 +191,5 @@
   <script src="js/scripts.js"></script>
   <script src="js/cookies.js"></script>
   <script src="js/menu.js"></script>
-
-  <!-- Control de cookies -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const elementosAnimar = document.querySelectorAll('.animar-aparicion');
-      const mostrarElemento = (entrada, observador) => {
-        entrada.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            observador.unobserve(e.target);
-          }
-        });
-      };
-      const observador = new IntersectionObserver(mostrarElemento, { threshold: 0.2 });
-      elementosAnimar.forEach(el => observador.observe(el));
-
-      const wrapper = document.getElementById('formulario-contacto-wrapper');
-      const bloqueo = document.getElementById('bloqueo-formulario');
-
-      function cookiesAnaliticasAceptadas() {
-        const aceptadas = localStorage.getItem("cookies_accepted");
-        if (aceptadas === "all") return true;
-        if (aceptadas === "custom") {
-          try {
-            const personalizadas = JSON.parse(localStorage.getItem("cookies_custom"));
-            return personalizadas?.analytics === true;
-          } catch (e) {
-            return false;
-          }
-        }
-        return false;
-      }
-
-      if (cookiesAnaliticasAceptadas()) {
-        if (wrapper) wrapper.style.display = 'block';
-        if (bloqueo) bloqueo.style.display = 'none';
-      } else {
-        if (wrapper) wrapper.style.display = 'none';
-        if (bloqueo) bloqueo.style.display = 'block';
-      }
-    });
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const boton = document.getElementById("abrir-config-contacto");
-      const modal = document.getElementById("cookie-config-modal");
-      if (boton && modal) {
-        boton.addEventListener("click", () => {
-          modal.classList.remove("oculto");
-        });
-      }
-    });
-  </script>
 </body>
 </html>
