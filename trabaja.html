@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,6 +10,13 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" />
   <link rel="icon" href="icons/favicons/favicon.ico" type="image/x-icon" />
   <style>
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
     .hero-trabaja {
       position: relative;
       width: 100%;
@@ -37,29 +45,24 @@
       justify-content: center;
     }
     .texto-hero h1 {
-      font-size: 3.8rem;
+      font-size: 3.2rem;
       font-weight: 700;
-      margin-top: 3rem;
-      margin-bottom: 1rem;
       color: #00f0ff;
       animation: entrar-titulo 1s ease-out forwards;
-      
     }
     .texto-hero p {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 600;
-      margin-bottom: 0;
       color: #00f0ff;
     }
     .caja-hero {
-  background-color: rgba(0, 0, 0, 0.65); /* fondo negro semitransparente */
-  padding: 2rem;
-  border-radius: 1rem;
-  backdrop-filter: blur(2px); /* opcional: desenfoque del fondo */
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
-}
-
-    .texto-hero .boton-enviar {
+      background-color: rgba(0, 0, 0, 0.65);
+      padding: 2rem;
+      border-radius: 1rem;
+      backdrop-filter: blur(2px);
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    }
+    .boton-enviar {
       padding: 0.8rem 2rem;
       background-color: #ff6600;
       color: #fff;
@@ -68,128 +71,176 @@
       border-radius: 50px;
       cursor: pointer;
       transition: background-color 0.3s;
+      margin-bottom: 1rem;
     }
-    .texto-hero .boton-enviar:hover {
+    .boton-enviar:hover {
       background-color: #e65c00;
     }
-
-    /* Estilo responsive basado en la plantilla de mantenimiento correctivo */
-
-@media (max-width: 768px) {
-  .hero-trabaja {
-    height: auto;
-    flex-direction: column;
-    padding: 2rem 1rem;
-    text-align: center;
-  }
-
-  .texto-hero {
-    padding: 2rem 1rem 0;
-  }
-
-  .texto-hero h1 {
-    font-size: 2rem;
-  }
-
-  .texto-hero p {
-    font-size: 1.1rem;
-  }
-
-  .texto-hero .boton-enviar {
-    font-size: 1rem;
-    padding: 0.6rem 1.5rem;
-  }
-
-  .caja-hero {
-    padding: 1.5rem;
-    border-radius: 1rem;
-    background-color: rgba(0, 0, 0, 0.6);
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
-  }
-
-  .bloque-institucional .contenedor-max h1 {
-    font-size: 1.6rem;
-    text-align: center;
-  }
-
-  .texto-engagement p {
-  font-size: 1rem;
-  text-align: justify;
-  padding: 0;
-  width: 100%;
-  max-width: none;
-}
-
-.formulario-contacto iframe {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin-left: 0 !important;
-  min-height: 700px;
-}
-}
-
+    main {
+      background-color: #0b214a;
+      color: #fff;
+      padding: 3rem 1rem;
+      position: relative;
+    }
+    main::before,
+    main::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, transparent, #00f0ff, transparent);
+      box-shadow: 0 0 8px #00f0ff;
+      z-index: 1;
+    }
+    main::before {
+      top: 0;
+    }
+    main::after {
+      bottom: 0;
+    }
+    .contenedor-max {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    h2, h1 {
+      font-size: 2.2rem;
+      color: #00f0ff;
+      animation: entrar-titulo 1s ease-out forwards;
+      text-align: left;
+    }
+    .descripcion-sub {
+      animation: texto-aparece 0.8s ease-out forwards;
+      text-align: justify;
+      margin-bottom: 1.2rem;
+    }
+    @keyframes entrar-titulo {
+      from { opacity: 0; transform: translateX(-100%); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes texto-aparece {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    iframe {
+      width: 100%;
+      min-height: 850px;
+      border: none;
+      margin-top: 0rem;
+    }
+    @media (max-width: 768px) {
+      .texto-hero h1 {
+        font-size: 2rem;
+      }
+      .texto-hero p {
+        font-size: 1rem;
+      }
+      .caja-hero {
+        padding: 1.5rem;
+      }
+      main {
+        padding: 2rem 1rem;
+      }
+    }
+    .titulo-candidato {
+      color: #00f0ff;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .bloque-engagement {
+      background-color: #0b214a;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+      margin-top: 2rem;
+      margin-bottom: 0rem;
+      animation: fadeInUp 0.8s ease-out both;
+    }
+    .bloque-engagement .descripcion-sub {
+      color: #ffffff;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .lista-engagement {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 2rem 0;
+      color: #00f0ff;
+      font-weight: bold;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+    .lista-engagement li {
+      margin-bottom: 0.5rem;
+    }
+    .lista-engagement li i {
+      margin-right: 0.6rem;
+      color: #00f0ff;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
   <header id="header"></header>
-
-  <!-- 🎬 HERO CON VIDEO -->
   <section class="hero-trabaja">
     <video autoplay muted loop playsinline>
       <source src="videos/20250605_2201_BJM Team Spirit_storyboard_01jx0txrebe2gb5q5k9d5cyk2v.mp4" type="video/mp4" />
     </video>
     <div class="texto-hero">
-  <div class="caja-hero">
-    <a href="#formulario" class="boton-enviar">Enviar candidatura</a>
-    <h1>Únete a la fuerza técnica de BJM</h1>
-    <p>Buscamos talento con actitud. Si eres de lxs que lo dan todo en cada jornada, este es tu sitio.</p>
-  </div>
-</div>
-
-  </section>
-
-  <main class="bloque-institucional animar-aparicion visible">
-    <div class="contenedor-max">
-      <h1 id="formulario"><i class="fas fa-briefcase"></i> Trabaja con nosotros</h1>
-      <p>¿Quieres formar parte de nuestro equipo? En BJM buscamos personas comprometidas, profesionales y con ganas de crecer. Rellena el formulario y da el primer paso.</p>
-      <div class="texto-engagement">
-        <p>En BJM creemos que una empresa no se construye solo con herramientas, sino con personas que lo dan todo cada día. Nuestro equipo está formado por profesionales comprometidos que saben lo que significa hacer bien el trabajo, cuidar los detalles y apoyarse mutuamente.</p>
-        <p>No buscamos solo currículums. Buscamos actitud, responsabilidad, respeto por el oficio y ganas de crecer. Porque aquí cada puesto cuenta, cada tarea suma, y cada persona tiene valor.</p>
-        <p>Ofrecemos entornos de trabajo estables, formación continua, apoyo técnico, y un ambiente donde se respira equipo. Desde soldadura hasta mantenimiento de comunidades, desde reparaciones eléctricas hasta limpieza profesional, en BJM cada servicio se hace con orgullo.</p>
-        <p>Si crees que encajas con nuestra manera de trabajar, no lo pienses más. Haznos llegar tu candidatura. Queremos conocerte.</p>
-      </div>
-
-      <div id="bloqueo-formulario" style="display: none;" class="bloqueo-cookies-form">
-        <p>Este formulario solo estará disponible cuando aceptes las cookies estadísticas.</p>
-        <button id="abrir-config-contacto" class="boton-enviar">Cambiar configuración de cookies</button>
-      </div>
-
-      <div id="formulario-contacto-wrapper">
-        <section class="formulario-contacto">
-          <div id="mensaje-gracias" class="oculto">
-            <h2><i class="fas fa-check-circle"></i> ¡Gracias por tu candidatura!</h2>
-            <p>La hemos recibido correctamente. Nos pondremos en contacto contigo si tu perfil encaja con nuestras necesidades.</p>
-          </div>
-
-          <iframe
-            src="https://form.jotform.com/251554138231350"
-            frameborder="0"
-            style="width: 100%; min-height: 850px; border: none;"
-            allowfullscreen>
-          </iframe>
-        </section>
+      <div class="caja-hero">
+        <h1>Únete a la fuerza técnica de BJM</h1>
+        <p>Buscamos talento con actitud. Si eres de lxs que lo dan todo en cada jornada, este es tu sitio.</p>
       </div>
     </div>
+  </section>
+  <main>
+    <div class="contenedor-max">
+      <h1><i class="fas fa-briefcase"></i> Trabaja con nosotros</h1>
+      <p class="descripcion-sub">¿Quieres formar parte de nuestro equipo? En <strong>BJM</strong> buscamos personas comprometidas, profesionales y con ganas de crecer. Si tienes actitud, compromiso y pasión por el trabajo bien hecho, <span class="titulo-candidato">envía tu candidatura</span>. Estamos creciendo. Y podrías ser parte del cambio.</p>
+      <p class="descripcion-sub">En BJM creemos que una empresa no se construye solo con herramientas, sino con personas que lo dan todo cada día.</p>
+      <div class="bloque-engagement">
+        <p class="descripcion-sub"><strong>Ofrecemos lo que todo buen profesional valora:</strong></p>
+        <ul class="lista-engagement">
+          <li><i class="fas fa-graduation-cap"></i> Formación técnica continua</li>
+          <li><i class="fas fa-users"></i> Buen ambiente laboral</li>
+          <li><i class="fas fa-hands-helping"></i> Apoyo constante del equipo</li>
+        </ul>
+        <p class="descripcion-sub">Aquí el trabajo se valora. El esfuerzo se nota. Y el equipo se respeta.</p>
+        <div style="text-align: center; margin-top: 2rem;">
+          <a href="#formulario" class="boton-enviar">Enviar candidatura</a>
+        </div>
+      </div>
+    </div>
+    <div id="formulario" style="height: 0;"></div>
+    <iframe src="https://form.jotform.com/251554138231350" title="Formulario de candidatura"></iframe>
   </main>
-
   <button id="btn-top" title="Volver arriba">&#8679;</button>
   <footer id="footer"></footer>
-
-  <!-- JS del sitio -->
   <script src="js/header.js"></script>
   <script src="js/footer.js"></script>
   <script src="js/scripts.js"></script>
   <script src="js/cookies.js"></script>
   <script src="js/menu.js"></script>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(enlace => {
+      enlace.addEventListener('click', e => {
+        e.preventDefault();
+        const destino = document.querySelector(enlace.getAttribute('href'));
+        if (destino) {
+          destino.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
