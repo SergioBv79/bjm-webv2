@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" />
   <link rel="icon" href="icons/favicons/favicon.ico" type="image/x-icon" />
-  <style>
+   <style>
     body {
       font-family: 'Rajdhani', sans-serif;
       margin: 0;
@@ -94,60 +94,52 @@
       box-shadow: 0 0 8px #00f0ff;
       z-index: 1;
     }
-    main::before {
-      top: 0;
-    }
-    main::after {
-      bottom: 0;
-    }
+    main::before { top: 0; }
+    main::after { bottom: 0; }
+
     .contenedor-max {
       max-width: 1100px;
       margin: 0 auto;
     }
+
     h2, h1 {
       font-size: 2.2rem;
       color: #00f0ff;
       animation: entrar-titulo 1s ease-out forwards;
       text-align: left;
     }
+
     .descripcion-sub {
       animation: texto-aparece 0.8s ease-out forwards;
       text-align: justify;
       margin-bottom: 1.2rem;
     }
+
     @keyframes entrar-titulo {
       from { opacity: 0; transform: translateX(-100%); }
       to { opacity: 1; transform: translateX(0); }
     }
+
     @keyframes texto-aparece {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     iframe {
       width: 100%;
+      max-width: 1000px;
       min-height: 850px;
       border: none;
-      margin-top: 0rem;
+      margin: 2rem auto;
+      display: block;
     }
-    @media (max-width: 768px) {
-      .texto-hero h1 {
-        font-size: 2rem;
-      }
-      .texto-hero p {
-        font-size: 1rem;
-      }
-      .caja-hero {
-        padding: 1.5rem;
-      }
-      main {
-        padding: 2rem 1rem;
-      }
-    }
+
     .titulo-candidato {
       color: #00f0ff;
       font-weight: bold;
       font-size: 1.2rem;
     }
+
     .bloque-engagement {
       background-color: #0b214a;
       padding: 2rem;
@@ -157,11 +149,13 @@
       margin-bottom: 0rem;
       animation: fadeInUp 0.8s ease-out both;
     }
+
     .bloque-engagement .descripcion-sub {
       color: #ffffff;
       font-size: 1.1rem;
       line-height: 1.6;
     }
+
     .lista-engagement {
       list-style: none;
       padding: 0;
@@ -171,23 +165,16 @@
       font-size: 1.05rem;
       line-height: 1.8;
     }
+
     .lista-engagement li {
       margin-bottom: 0.5rem;
     }
+
     .lista-engagement li i {
       margin-right: 0.6rem;
       color: #00f0ff;
     }
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+
     .frase-rock {
       text-align: center;
       font-size: 1.8rem;
@@ -202,9 +189,22 @@
       animation: rockPulse 2.5s infinite ease-in-out;
       max-width: 800px;
     }
+
     @keyframes rockPulse {
       0%, 100% { transform: scale(1); text-shadow: 0 0 10px rgba(0, 240, 255, 0.3); }
       50% { transform: scale(1.05); text-shadow: 0 0 20px rgba(0, 240, 255, 0.6); }
+    }
+
+    @media (max-width: 768px) {
+      .texto-hero h1 { font-size: 2rem; }
+      .texto-hero p { font-size: 1rem; }
+      .caja-hero { padding: 1.5rem; }
+      main { padding: 2rem 1rem; }
+      .bloque-engagement { padding: 1.5rem; }
+      .lista-engagement { font-size: 1rem; line-height: 1.6; }
+      .frase-rock { font-size: 1.4rem; margin: 2rem auto; }
+      .boton-enviar { font-size: 1rem; padding: 0.6rem 1.2rem; }
+      iframe { min-height: 600px; }
     }
   </style>
 </head>
