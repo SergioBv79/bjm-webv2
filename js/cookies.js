@@ -1,6 +1,7 @@
-// cookies.js - Gestión completa de cookies
 
-document.addEventListener("DOMContentLoaded", function () {
+// cookies.js - Gestión completa de cookies con control de consentimiento
+
+window.addEventListener("load", function () {
   const consent = localStorage.getItem("cookies_accepted");
 
   const bannerHTML = `
@@ -31,44 +32,40 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   `;
 
-  // Insertar siempre el panel de configuración para que funcione la galleta
+  // Insertar siempre la configuración
   document.body.insertAdjacentHTML("beforeend", configHTML);
 
   const modal = document.getElementById("cookie-config-modal");
-  // ✅ Espera hasta que el botón y el modal estén en el DOM y engancha el evento
-const esperarBotonYModal = setInterval(() => {
-  const boton = document.querySelector(".abrir-config-cookies");
-  const modal = document.getElementById("cookie-config-modal");
 
-  if (boton && modal && !boton.classList.contains("evento-puesto")) {
-    boton.addEventListener("click", () => {
-      modal.classList.remove("oculto");
-    });
-    boton.classList.add("evento-puesto");
-    clearInterval(esperarBotonYModal);
-  }
-}, 200);
+  // Esperar hasta que el botón esté disponible para enlazar evento
+  const esperarBotonYModal = setInterval(() => {
+    const boton = document.querySelector(".abrir-config-cookies");
+    if (boton && modal && !boton.classList.contains("evento-puesto")) {
+      boton.addEventListener("click", () => {
+        modal.classList.remove("oculto");
+      });
+      boton.classList.add("evento-puesto");
+      clearInterval(esperarBotonYModal);
+    }
+  }, 200);
 
-
-  // Mostrar el banner SOLO si estamos en index.html o raíz
-  const path = window.location.pathname;
-  const esIndex = path.endsWith("index.html") || path === "/" || path.endsWith("/");
-
-  if (!consent && esIndex) {
+  // Mostrar el banner si no se ha aceptado todavía
+  if (!consent) {
     document.body.insertAdjacentHTML("beforeend", bannerHTML);
     document.getElementById("cookie-banner").classList.add("visible");
-  } else if (consent) {
+  } else {
     activarGoogleAnalyticsSiProcede();
   }
 
+  // Botón superior de abrir configuración (si existe)
   const openConfig = document.getElementById("abrir-configuracion-cookies");
-
   if (openConfig) {
     openConfig.addEventListener("click", () => {
       modal.classList.remove("oculto");
     });
   }
 
+  // Todos los botones que abren el modal
   document.querySelectorAll('.abrir-config-cookies').forEach(el => {
     el.addEventListener('click', e => {
       e.preventDefault();
@@ -76,6 +73,7 @@ const esperarBotonYModal = setInterval(() => {
     });
   });
 
+  // Acciones en el banner
   document.addEventListener("click", function (e) {
     if (e.target.id === "configure-cookies") {
       modal.classList.remove("oculto");
@@ -98,6 +96,7 @@ const esperarBotonYModal = setInterval(() => {
     }
   });
 
+  // Guardar configuración personalizada
   document.addEventListener("submit", function (e) {
     if (e.target.id === "cookie-options") {
       e.preventDefault();
@@ -114,17 +113,14 @@ const esperarBotonYModal = setInterval(() => {
       if (typeof mostrarFormularioSiHayConsentimiento === "function") {
         mostrarFormularioSiHayConsentimiento();
       }
-
     }
   });
 });
 
-
-// Espera a que el botón flotante esté en el DOM y le asigna su evento
+// Redundancia de seguridad por si el botón aparece más tarde
 const esperarBotonCookie = setInterval(() => {
   const boton = document.querySelector(".abrir-config-cookies");
   const modal = document.getElementById("cookie-config-modal");
-
   if (boton && modal) {
     boton.addEventListener("click", () => {
       modal.classList.remove("oculto");
@@ -134,21 +130,21 @@ const esperarBotonCookie = setInterval(() => {
 }, 200);
 
 
-
-
-
-
-
 // ✅ ACTIVACIÓN DE GOOGLE ANALYTICS SOLO SI HAY CONSENTIMIENTO DE MARKETING
+// Esta función se ejecuta si el usuario ha aceptado todas las cookies, o bien ha aceptado cookies de marketing de forma personalizada.
+// Solo entonces se inyecta Google Analytics en la página.
 function activarGoogleAnalyticsSiProcede() {
   const consentimiento = localStorage.getItem("cookies_accepted");
 
   if (consentimiento === "all") {
+    // Se aceptaron todas las cookies
     inyectarGA();
   } else if (consentimiento === "custom") {
+    // Se aceptó una configuración personalizada
     try {
       const config = JSON.parse(localStorage.getItem("cookies_custom"));
       if (config.marketing) {
+        // Solo si se aceptaron cookies de marketing se activa GA
         inyectarGA();
       }
     } catch (error) {
@@ -158,6 +154,8 @@ function activarGoogleAnalyticsSiProcede() {
 }
 
 // ✅ INYECTAR GA DINÁMICAMENTE (EDITAR EL ID CUANDO SE PUBLIQUE)
+// Esta función inyecta el script de Google Analytics solo si el consentimiento lo permite.
+// Sustituir 'G-XXXXXXXXXX' por el ID real del proyecto de Google Analytics cuando se publique la web.
 function inyectarGA() {
   const scriptTag = document.createElement("script");
   scriptTag.async = true;

@@ -128,6 +128,10 @@
       min-height: 850px;
       border: none;
       margin-top: 0rem;
+      max-width: 1100px;
+      min-height: 850px;
+      margin: 0 auto; 
+      display: block;
     }
     @media (max-width: 768px) {
       .texto-hero h1 {
@@ -189,25 +193,23 @@
       }
     }
     .frase-rock {
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: transparent;
-  background: linear-gradient(90deg, #00f0ff, #ffffff, #00f0ff);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
-  margin: 3rem auto 2rem;
-  animation: rockPulse 2.5s infinite ease-in-out;
-  max-width: 800px;
-}
-
-@keyframes rockPulse {
-  0%, 100% { transform: scale(1); text-shadow: 0 0 10px rgba(0, 240, 255, 0.3); }
-  50% { transform: scale(1.05); text-shadow: 0 0 20px rgba(0, 240, 255, 0.6); }
-}
-
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: transparent;
+      background: linear-gradient(90deg, #00f0ff, #ffffff, #00f0ff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
+      margin: 3rem auto 2rem;
+      animation: rockPulse 2.5s infinite ease-in-out;
+      max-width: 800px;
+    }
+    @keyframes rockPulse {
+      0%, 100% { transform: scale(1); text-shadow: 0 0 10px rgba(0, 240, 255, 0.3); }
+      50% { transform: scale(1.05); text-shadow: 0 0 20px rgba(0, 240, 255, 0.6); }
+    }
   </style>
 </head>
 <body>
@@ -235,16 +237,26 @@
           <li><i class="fas fa-users"></i> Buen ambiente laboral</li>
           <li><i class="fas fa-hands-helping"></i> Apoyo constante del equipo</li>
         </ul>
-       <p class="frase-rock">Aquí el trabajo se valora. El esfuerzo se recompensa. Y el equipo se respeta.</p>
-
+        <p class="frase-rock">Aquí el trabajo se valora. El esfuerzo se recompensa. Y el equipo se respeta.</p>
         <div style="text-align: center; margin-top: 2rem;">
           <a href="#formulario" class="boton-enviar">Enviar candidatura</a>
         </div>
       </div>
     </div>
-    <div id="formulario" style="height: 0;"></div>
-    <iframe src="https://form.jotform.com/251554138231350" title="Formulario de candidatura"></iframe>
+
+    <!-- Banner de bloqueo si no se aceptan cookies estadísticas -->
+    <div id="bloqueo-formulario" style="display: none;" class="bloqueo-cookies-form">
+        <p>Este formulario solo estará disponible cuando aceptes las cookies estadísticas.</p>
+        <p><strong>Pulsa la galleta flotante</strong> en la parte inferior izquierda para cambiar la configuración de cookies.</p>
+      </div>
+
+    <!-- Formulario solo si hay consentimiento -->
+    <div id="formulario-contacto-wrapper">
+      <div id="formulario" style="height: 0;"></div>
+      <iframe src="https://form.jotform.com/251554138231350" title="Formulario de candidatura"></iframe>
+    </div>
   </main>
+
   <button id="btn-top" title="Volver arriba">&#8679;</button>
   <footer id="footer"></footer>
   <script src="js/header.js"></script>
@@ -262,6 +274,60 @@
         }
       });
     });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const wrapper = document.getElementById('formulario-contacto-wrapper');
+      const bloqueo = document.getElementById('bloqueo-formulario');
+
+      function cookiesAnaliticasAceptadas() {
+        const aceptadas = localStorage.getItem("cookies_accepted");
+        if (aceptadas === "all") return true;
+        if (aceptadas === "custom") {
+          try {
+            const personalizadas = JSON.parse(localStorage.getItem("cookies_custom"));
+            return personalizadas?.analytics === true;
+          } catch (e) {
+            return false;
+          }
+        }
+        return false;
+      }
+
+      if (cookiesAnaliticasAceptadas()) {
+        wrapper.style.display = 'block';
+        bloqueo.style.display = 'none';
+      } else {
+        wrapper.style.display = 'none';
+        bloqueo.style.display = 'block';
+      }
+    });
+
+    function mostrarFormularioSiHayConsentimiento() {
+      const wrapper = document.getElementById('formulario-contacto-wrapper');
+      const bloqueo = document.getElementById('bloqueo-formulario');
+      const aceptadas = localStorage.getItem("cookies_accepted");
+
+      let permitir = false;
+
+      if (aceptadas === "all") {
+        permitir = true;
+      } else if (aceptadas === "custom") {
+        try {
+          const config = JSON.parse(localStorage.getItem("cookies_custom"));
+          permitir = config.analytics === true;
+        } catch (e) {
+          permitir = false;
+        }
+      }
+
+      if (permitir) {
+        wrapper.style.display = 'block';
+        bloqueo.style.display = 'none';
+      } else {
+        wrapper.style.display = 'none';
+        bloqueo.style.display = 'block';
+      }
+    }
   </script>
 </body>
 </html>
