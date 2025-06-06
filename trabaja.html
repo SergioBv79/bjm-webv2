@@ -17,6 +17,7 @@
       background-color: #f4f4f4;
       color: #333;
     }
+
     .hero-trabaja {
       position: relative;
       width: 100%;
@@ -27,12 +28,14 @@
       justify-content: center;
       color: #070707;
     }
+
     .hero-trabaja video {
       position: absolute;
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+
     .texto-hero {
       position: relative;
       z-index: 1;
@@ -44,17 +47,20 @@
       align-items: center;
       justify-content: center;
     }
+
     .texto-hero h1 {
       font-size: 3.2rem;
       font-weight: 700;
       color: #00f0ff;
       animation: entrar-titulo 1s ease-out forwards;
     }
+
     .texto-hero p {
       font-size: 1.4rem;
       font-weight: 600;
       color: #00f0ff;
     }
+
     .caja-hero {
       background-color: rgba(0, 0, 0, 0.65);
       padding: 2rem;
@@ -62,6 +68,7 @@
       backdrop-filter: blur(2px);
       box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
     }
+
     .boton-enviar {
       padding: 0.8rem 2rem;
       background-color: #ff6600;
@@ -73,15 +80,18 @@
       transition: background-color 0.3s;
       margin-bottom: 1rem;
     }
+
     .boton-enviar:hover {
       background-color: #e65c00;
     }
+
     main {
       background-color: #0b214a;
       color: #fff;
       padding: 3rem 1rem;
       position: relative;
     }
+
     main::before,
     main::after {
       content: "";
@@ -94,6 +104,7 @@
       box-shadow: 0 0 8px #00f0ff;
       z-index: 1;
     }
+
     main::before { top: 0; }
     main::after { bottom: 0; }
 
@@ -195,11 +206,6 @@
       50% { transform: scale(1.05); text-shadow: 0 0 20px rgba(0, 240, 255, 0.6); }
     }
 
- @keyframes entrar-titulo {
-      from { opacity: 0; transform: translateX(-100%); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-
     @media (max-width: 768px) {
       .hero-trabaja {
         height: auto;
@@ -213,7 +219,7 @@
       }
 
       .texto-hero h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
         line-height: 1.3;
       }
 
@@ -222,14 +228,7 @@
         margin-top: 0.8rem;
         line-height: 1.4;
       }
-    }
 
-
-    @media (max-width: 768px) {
-      .texto-hero h1 { font-size: 2rem; }
-      .texto-hero p { font-size: 1rem; }
-      .caja-hero { padding: 1.5rem; }
-      main { padding: 2rem 1rem; }
       .bloque-engagement { padding: 1.5rem; }
       .lista-engagement { font-size: 1rem; line-height: 1.6; }
       .frase-rock { font-size: 1.4rem; margin: 2rem auto; }
