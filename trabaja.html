@@ -153,7 +153,7 @@
       padding: 2rem;
       border-radius: 1rem;
       box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
-      margin-top: 2rem;
+      margin-top: 1rem;
       margin-bottom: 0rem;
       animation: fadeInUp 0.8s ease-out both;
     }
@@ -188,6 +188,26 @@
         transform: translateY(0);
       }
     }
+    .frase-rock {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: transparent;
+  background: linear-gradient(90deg, #00f0ff, #ffffff, #00f0ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
+  margin: 3rem auto 2rem;
+  animation: rockPulse 2.5s infinite ease-in-out;
+  max-width: 800px;
+}
+
+@keyframes rockPulse {
+  0%, 100% { transform: scale(1); text-shadow: 0 0 10px rgba(0, 240, 255, 0.3); }
+  50% { transform: scale(1.05); text-shadow: 0 0 20px rgba(0, 240, 255, 0.6); }
+}
+
   </style>
 </head>
 <body>
@@ -215,7 +235,8 @@
           <li><i class="fas fa-users"></i> Buen ambiente laboral</li>
           <li><i class="fas fa-hands-helping"></i> Apoyo constante del equipo</li>
         </ul>
-        <p class="descripcion-sub">Aquí el trabajo se valora. El esfuerzo se nota. Y el equipo se respeta.</p>
+       <p class="frase-rock">Aquí el trabajo se valora. El esfuerzo se recompensa. Y el equipo se respeta.</p>
+
         <div style="text-align: center; margin-top: 2rem;">
           <a href="#formulario" class="boton-enviar">Enviar candidatura</a>
         </div>
