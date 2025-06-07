@@ -3,18 +3,178 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pintura</title>
+  <title>Pintura y Reparación de Fachadas | BJM Mantenimientos</title>
   <link rel="stylesheet" href="../css/estilos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" />
   <link rel="icon" href="../icons/favicons/favicon.ico" type="image/x-icon" />
+  <style>
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #111;
+    }
+    .hero {
+      background: linear-gradient(135deg, #ffe5c2, #f0af6d, #c97a00);
+      background-size: 300% 300%;
+      animation: pinturaGlow 12s ease infinite;
+      color: #0b214a;
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+    }
+    @keyframes pinturaGlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .hero h1 {
+      font-size: 2.6rem;
+      color: #0b214a;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+    }
+    .card-servicio {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem 2rem;
+      background-color: #fff;
+    }
+    .card-servicio:nth-child(even) {
+      flex-direction: row-reverse;
+      background-color: #f9f9f9;
+    }
+    .card-servicio img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.15);
+    }
+    .card-texto {
+      max-width: 550px;
+    }
+    .card-texto h2 {
+      color: #0b214a;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .card-texto p {
+      font-size: 1.05rem;
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .beneficios {
+      background-color: #fff7ed;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .beneficios h3 {
+      color: #b55d00;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
+    .beneficios ul {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 1.1rem;
+      padding-left: 1.2rem;
+    }
+          .frase-final {
+      background: #0b214a;
+      color: #00f0ff;
+      font-size: 1.6rem;
+      padding: 3rem 1rem 6rem;
+      margin-bottom: 4rem;
+      text-align: center;
+      font-weight: bold;
+    }
+       .boton-volver-servicios {
+  display: inline-block;
+  margin: 1rem 0 2rem;
+  padding: 0.35rem 0.75rem;       /* 🔽 menos padding (altura y anchura) */
+  background-color: #00f0ff;
+  color: #0b214a;
+  font-weight: 600;
+  font-size: 0.9rem;              /* 🔽 texto más pequeño */
+  border-radius: 5px;             /* 🔽 bordes más suaves */
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.boton-volver-servicios i {
+  margin-right: 0.25rem;
+  font-size: 0.95rem;             /* 🔽 icono más pequeño también (opcional) */
+}
+.boton-volver-servicios:hover {
+  background-color: #00c8dd;
+}
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 768px) {
+      .card-servicio {
+        flex-direction: column;
+      }
+      .card-texto h2 {
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
   <header id="header"></header>
 
-  <main class="pagina-construccion">
-    <h1>🚧 Página en construcción</h1>
-    <p>Estamos preparando la sección <strong>Pintura</strong> con todos los detalles.</p>
+  <main>
+    <section class="hero">
+      <h1><i class="fas fa-paint-roller"></i> Pintura y Reparación de Fachadas y Cubiertas</h1>
+      <p>Recuperamos la imagen de tu edificio con intervenciones profesionales, seguras y duraderas. Belleza, protección y valor para tu comunidad.</p>
+    </section>
+
+    <section class="card-servicio reveal">
+      <img src="../img/trabajos verticales.ChatGPT Image 7 jun 2025, 20_35_34.png" alt="Trabajo de pintura en fachada" />
+      <div class="card-texto">
+        <h2>Pintura exterior profesional</h2>
+        <p>Aplicación de pintura resistente a la intemperie, en colores uniformes y duraderos. Eliminación de restos antiguos, imprimación y renovación estética completa.</p>
+      </div>
+    </section>
+
+    <section class="card-servicio reveal">
+      <img src="../img/reparaciones de fachadas1.ChatGPT Image 4 jun 2025, 20_50_44.png" alt="Reparación estructural de fachada" />
+      <div class="card-texto">
+        <h2>Reparación de fisuras y desconchones</h2>
+        <p>Trabajos de sellado, enlucido y tratamiento de grietas en fachadas. Intervenciones sin andamios con plataformas o técnicas de trabajo vertical.</p>
+      </div>
+    </section>
+
+    <section class="beneficios">
+      <h3>¿Por qué pintar y reparar tu fachada?</h3>
+      <ul>
+        <li>🎯 Revalorización inmediata del edificio.</li>
+        <li>🧱 Protección frente a humedad, calor y erosión.</li>
+        <li>👷‍♀️ Mayor seguridad estructural y estética.</li>
+        <li>🔧 Menor mantenimiento a medio y largo plazo.</li>
+        <li>🏡 Mejor imagen para residentes y visitantes.</li>
+      </ul>
+    </section>
+
+    <div class="frase-final">
+      <p>Una fachada cuidada habla de quienes viven dentro 🧱</p>
+      <a href="index.html" class="boton-volver-servicios"><i class="fas fa-arrow-left"></i> Volver al catálogo de servicios</a>
+    </div>
   </main>
 
   <footer id="footer"></footer>
@@ -24,5 +184,19 @@
   <script src="../js/scripts.js"></script>
   <script src="../js/cookies.js"></script>
   <script src="../js/menu.js"></script>
+  <script>
+    function revealElements() {
+      const reveals = document.querySelectorAll(".reveal");
+      for (let el of reveals) {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+          el.classList.add("active");
+        }
+      }
+    }
+    window.addEventListener("scroll", revealElements);
+    window.addEventListener("load", revealElements);
+  </script>
 </body>
 </html>
+

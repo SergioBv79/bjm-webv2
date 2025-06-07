@@ -3,20 +3,173 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mantenimiento y reparación de piscinas</title>
+  <title>Piscinas | BJM Mantenimientos</title>
   <link rel="stylesheet" href="../css/estilos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" />
   <link rel="icon" href="../icons/favicons/favicon.ico" type="image/x-icon" />
+  <style>
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #111;
+    }
+
+    .hero {
+      background-color: #0b214a;
+      color: #fff;
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #00f0ff;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    .card-servicio {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem 2rem;
+      background-color: #fff;
+    }
+
+    .card-servicio img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.15);
+    }
+
+    .card-texto {
+      max-width: 550px;
+    }
+
+    .card-texto h2 {
+      color: #0b214a;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-texto p {
+      font-size: 1.05rem;
+      text-align: justify;
+      line-height: 1.6;
+    }
+
+    .beneficios {
+      background-color: #eafaff;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .beneficios h3 {
+      color: #0b214a;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .beneficios ul {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 1.1rem;
+      padding-left: 1.2rem;
+    }
+
+      .frase-final {
+      background: #0b214a;
+      color: #00f0ff;
+      font-size: 1.6rem;
+      padding: 3rem 1rem 6rem;
+      margin-bottom: 4rem;
+      text-align: center;
+      font-weight: bold;
+    }
+       .boton-volver-servicios {
+  display: inline-block;
+  margin: 1rem 0 2rem;
+  padding: 0.35rem 0.75rem;       /* 🔽 menos padding (altura y anchura) */
+  background-color: #00f0ff;
+  color: #0b214a;
+  font-weight: 600;
+  font-size: 0.9rem;              /* 🔽 texto más pequeño */
+  border-radius: 5px;             /* 🔽 bordes más suaves */
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.boton-volver-servicios i {
+  margin-right: 0.25rem;
+  font-size: 0.95rem;             /* 🔽 icono más pequeño también (opcional) */
+}
+.boton-volver-servicios:hover {
+  background-color: #00c8dd;
+}
+
+    @media (max-width: 768px) {
+      .card-servicio {
+        flex-direction: column;
+      }
+      .card-texto h2 {
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
   <header id="header"></header>
 
-  <main class="pagina-construccion">
-    <h1>🚧 Página en construcción</h1>
-    <p>Estamos preparando la sección <strong>Limpieza</strong> con todos los detalles.</p>
-  </main>
+  <main>
+    <section class="hero">
+      <h1><i class="fas fa-water"></i> Mantenimiento de Piscinas Comunitarias</h1>
+      <p>Servicios profesionales para garantizar el agua limpia, segura y en condiciones óptimas durante todo el año.</p>
+    </section>
 
+    <section class="card-servicio">
+      <img src="../img/mantenimiento piscinas.ChatGPT Image 4 jun 2025, 21_23_23.png" alt="Técnico revisando piscina" />
+      <div class="card-texto">
+        <h2>Mantenimiento integral</h2>
+        <p>Realizamos mantenimiento preventivo y correctivo de piscinas comunitarias, controlando niveles químicos, limpieza de fondos y paredes, y asegurando el correcto funcionamiento de depuradoras y bombas.</p>
+      </div>
+    </section>
+
+    <section class="card-servicio">
+      <img src="../img/limpieza piscinas.ChatGPT Image 7 jun 2025, 20_19_37.png" alt="Limpieza de piscina vacía" />
+      <div class="card-texto">
+        <h2>Limpieza y puesta a punto</h2>
+        <p>Limpieza inicial, en vaciado, y puesta en marcha al comienzo de temporada. Eliminamos incrustaciones, algas y residuos, dejando la piscina lista para su uso.</p>
+      </div>
+    </section>
+
+    <section class="beneficios">
+      <h3>Beneficios para tu comunidad</h3>
+      <ul>
+        <li>✅ Agua limpia y cristalina todo el verano.</li>
+        <li>✅ Control sanitario y cumplimiento de normativas.</li>
+        <li>✅ Seguridad para personas usuarias.</li>
+        <li>✅ Menores averías en equipos de depuración.</li>
+        <li>✅ Asistencia rápida en caso de incidencias.</li>
+      </ul>
+    </section>
+
+    <div class="frase-final">
+      <p>El verano se disfruta más cuando la piscina está perfecta 💦</p>
+      <a href="index.html" class="boton-volver-servicios"><i class="fas fa-arrow-left"></i> Volver al catálogo de servicios</a>
+    </div>
+  </main>
+<button id="btn-top" title="Volver arriba">&#8679;</button>
   <footer id="footer"></footer>
 
   <script src="../js/header.js"></script>
@@ -26,3 +179,4 @@
   <script src="../js/menu.js"></script>
 </body>
 </html>
+

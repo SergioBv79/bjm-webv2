@@ -3,20 +3,178 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Electricidad</title>
+  <title>Electricidad | BJM Mantenimientos</title>
   <link rel="stylesheet" href="../css/estilos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" />
   <link rel="icon" href="../icons/favicons/favicon.ico" type="image/x-icon" />
+  <style>
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #111;
+    }
+    .hero-electricidad {
+      background-color: #0b214a;
+      color: #fff;
+      padding: 4rem 2rem 3rem;
+      text-align: center;
+    }
+    .hero-electricidad h1 {
+      font-size: 2.5rem;
+      color: #00f0ff;
+      margin-bottom: 1rem;
+    }
+    .hero-electricidad p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+    }
+    .card-servicio {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem 2rem;
+      background-color: #fff;
+    }
+    .card-servicio img {
+      width: 100%;
+      max-width: 480px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.2);
+    }
+    .card-texto {
+      max-width: 600px;
+    }
+    .card-texto h2 {
+      color: #0b214a;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .card-texto p {
+      font-size: 1.05rem;
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .beneficios {
+      background-color: #eafaff;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .beneficios h3 {
+      color: #0b214a;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .beneficios ul {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+      padding-left: 1.2rem;
+      font-size: 1.1rem;
+    }
+    .frase-final {
+      background: #0b214a;
+      color: #00f0ff;
+      font-size: 1.6rem;
+      padding: 3rem 1rem 4rem;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+    .frase-final a {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #00f0ff;
+      color: #0b214a;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+.boton-volver-servicios {
+  display: inline-block;
+  margin: 1rem 0 2rem;
+  padding: 0.35rem 0.75rem;       /* 🔽 menos padding (altura y anchura) */
+  background-color: #00f0ff;
+  color: #0b214a;
+  font-weight: 600;
+  font-size: 0.9rem;              /* 🔽 texto más pequeño */
+  border-radius: 5px;             /* 🔽 bordes más suaves */
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.boton-volver-servicios i {
+  margin-right: 0.25rem;
+  font-size: 0.95rem;             /* 🔽 icono más pequeño también (opcional) */
+}
+.boton-volver-servicios:hover {
+  background-color: #00c8dd;
+}
+
+    @media (max-width: 768px) {
+      .card-servicio {
+        flex-direction: column;
+      }
+      .card-texto h2 {
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
   <header id="header"></header>
 
-  <main class="pagina-construccion">
-    <h1>🚧 Página en construcción</h1>
-    <p>Estamos preparando la sección <strong>Electricidad</strong> con todos los detalles.</p>
-  </main>
+  <main>
+    <section class="hero-electricidad">
+      <h1><i class="fas fa-bolt"></i> Servicios de Electricidad para Comunidades</h1>
+      <p>Instalaciones, mantenimiento y reparaciones eléctricas para comunidades de propietarios. Seguridad, eficiencia y respuesta profesional.</p>
+    </section>
 
+    <section class="card-servicio">
+      <img src="../img/ELCTRICIDAD COMUNIDADES.ChatGPT Image 7 jun 2025, 17_00_40.png" alt="Técnico realizando instalación eléctrica" />
+      <div class="card-texto">
+        <h2>Instalaciones eléctricas completas</h2>
+        <p>Realizamos instalaciones eléctricas nuevas o reformas en comunidades, garajes y zonas comunes. Adaptadas a normativa REBT, con materiales homologados y personal cualificado. Seguridad y eficiencia desde el primer cable.</p>
+      </div>
+    </section>
+
+    <section class="beneficios">
+      <h3>¿Qué servicios eléctricos ofrecemos?</h3>
+      <ul>
+        <li>Instalación, ampliación y reforma de cuadros eléctricos.</li>
+        <li>Iluminación LED con sensores de presencia en escaleras y pasillos.</li>
+        <li>Reparación de averías eléctricas en zonas comunes y garajes.</li>
+        <li>Instalación de puntos de recarga para vehículos eléctricos (V.E.).</li>
+        <li>Mantenimiento preventivo y correctivo de instalaciones comunitarias.</li>
+        <li>Legalización de instalaciones y certificaciones eléctricas.</li>
+      </ul>
+    </section>
+
+    <section class="beneficios">
+      <h3>Beneficios para tu comunidad</h3>
+      <ul>
+        <li>Reducción del consumo eléctrico y ahorro en facturas.</li>
+        <li>Mayor seguridad para personas usuarias y visitantes.</li>
+        <li>Cumplimiento de la normativa vigente sin sorpresas.</li>
+        <li>Respuesta rápida ante averías con personal propio.</li>
+        <li>Instalaciones preparadas para el presente y el futuro.</li>
+      </ul>
+    </section>
+
+    <div class="frase-final">
+      <p>La luz nunca debe ser una preocupación. Nosotros nos ocupamos.⚡</p>
+      <a href="index.html" class="boton-volver-servicios">
+        <i class="fas fa-arrow-left"></i> Volver al catálogo de servicios
+      </a>
+    </div>
+  </main>
+<button id="btn-top" title="Volver arriba">&#8679;</button>
   <footer id="footer"></footer>
 
   <script src="../js/header.js"></script>

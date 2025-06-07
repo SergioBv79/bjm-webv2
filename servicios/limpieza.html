@@ -3,20 +3,207 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Limpieza</title>
+  <title>Limpieza | BJM Mantenimientos</title>
   <link rel="stylesheet" href="../css/estilos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" />
   <link rel="icon" href="../icons/favicons/favicon.ico" type="image/x-icon" />
+  <style>
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #111;
+    }
+
+    .hero-limpieza {
+      background:  #0b214a;
+      background-size: 400% 400%;
+      animation: gradientFlow 10s ease infinite;
+      color: #0b214a;
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+    }
+    @keyframes gradientFlow {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .hero-limpieza h1 {
+      font-size: 2.5rem;
+      color: #00f0ff;
+      margin-bottom: 1rem;
+    }
+
+    .hero-limpieza p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      color: #ffff;
+    }
+
+    .card-servicio {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem 2rem;
+      background-color: #fff;
+    }
+
+    .card-servicio:nth-child(even) {
+      flex-direction: row-reverse;
+      background-color: #f9f9f9;
+    }
+
+    .card-servicio img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.15);
+    }
+
+    .card-texto {
+      max-width: 550px;
+    }
+
+    .card-texto h2 {
+      color: #0b214a;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-texto p {
+      font-size: 1.05rem;
+      text-align: justify;
+      line-height: 1.6;
+    }
+
+    .beneficios {
+      background-color: #a4e3f6;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .beneficios h3 {
+      color: #0b214a;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .beneficios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .beneficios-grid div {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .beneficios-grid div:hover {
+      transform: translateY(-5px);
+    }
+
+    .frase-final {
+      background: #0b214a;
+      color: #00f0ff;
+      font-size: 1.6rem;
+      padding: 3rem 1rem 6rem;
+      margin-bottom: 4rem;
+      text-align: center;
+      font-weight: bold;
+    }
+       .boton-volver-servicios {
+  display: inline-block;
+  margin: 1rem 0 2rem;
+  padding: 0.35rem 0.75rem;       /* 🔽 menos padding (altura y anchura) */
+  background-color: #00f0ff;
+  color: #0b214a;
+  font-weight: 600;
+  font-size: 0.9rem;              /* 🔽 texto más pequeño */
+  border-radius: 5px;             /* 🔽 bordes más suaves */
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.boton-volver-servicios i {
+  margin-right: 0.25rem;
+  font-size: 0.95rem;             /* 🔽 icono más pequeño también (opcional) */
+}
+.boton-volver-servicios:hover {
+  background-color: #00c8dd;
+}
+    @media (max-width: 768px) {
+      .card-servicio {
+        flex-direction: column;
+      }
+      .card-texto h2 {
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
   <header id="header"></header>
 
-  <main class="pagina-construccion">
-    <h1>🚧 Página en construcción</h1>
-    <p>Estamos preparando la sección <strong>Limpieza</strong> con todos los detalles.</p>
-  </main>
+  <main>
+    <section class="hero-limpieza">
+      <h1><i class="fas fa-broom"></i> Limpieza profesional para comunidades</h1>
+      <p>Espacios comunes impecables, seguros y agradables para vivir. Servicios de limpieza adaptados a tus necesidades.</p>
+    </section>
 
+    <section class="card-servicio">
+      <img src="../img/limpieza de comunidades.ChatGPT Image 7 jun 2025, 18_29_25.png" alt="Limpieza de zonas comunes" />
+      <div class="card-texto">
+        <h2>Zonas comunes y portales</h2>
+        <p>Limpieza periódica de portales, escaleras, pasamanos, buzones y rellanos. Productos profesionales, desinfección y atención al detalle.</p>
+      </div>
+    </section>
+
+    <section class="card-servicio">
+      <img src="../img/limpieza garajes2.ChatGPT Image 7 jun 2025, 19_28_26.png" alt="Limpieza de garajes" />
+      <div class="card-texto">
+        <h2>Garajes y zonas de tránsito</h2>
+        <p>Eliminación de polvo, grasa y residuos con maquinaria industrial. Barrido mecánico, fregado y desinfección para garajes comunitarios.</p>
+      </div>
+    </section>
+
+    <section class="card-servicio">
+      <img src="../img/limpieza comunidaddes 2.ChatGPT Image 7 jun 2025, 18_29_38.png" alt="Limpieza de cristales" />
+      <div class="card-texto">
+        <h2>Ventanas y cristales</h2>
+        <p>Limpieza interior y exterior de cristales en zonas comunes, cancelas, puertas automáticas y escaparates. Brillo y visibilidad impecable.</p>
+      </div>
+    </section>
+
+    <section class="beneficios">
+      <h3>Beneficios de una comunidad limpia</h3>
+      <div class="beneficios-grid">
+        <div>✨ Mejora la imagen del edificio.</div>
+        <div>🧼 Prevención de plagas, hongos y malos olores.</div>
+        <div>🌱 Ambientes más saludables y confortables.</div>
+        <div>🧽 Aumento del valor de los inmuebles.</div>
+        <div>🛠️ Menos incidencias por falta de mantenimiento.</div>
+        <div>💙 Mayor satisfacción vecinal y convivencia.</div>
+      </div>
+    </section>
+
+    <div class="frase-final">
+      <p>Una comunidad limpia habla bien de quienes la habitan</p>
+      <a href="index.html" class="boton-volver-servicios"><i class="fas fa-arrow-left"></i> Volver al catálogo de servicios</a>
+    </div>
+  </main>
+<button id="btn-top" title="Volver arriba">&#8679;</button>
   <footer id="footer"></footer>
 
   <script src="../js/header.js"></script>

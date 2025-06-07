@@ -1,22 +1,171 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fontaneria</title>
+  <title>Fontanería | BJM Mantenimientos</title>
   <link rel="stylesheet" href="../css/estilos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" />
   <link rel="icon" href="../icons/favicons/favicon.ico" type="image/x-icon" />
+  <style>
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #111;
+    }
+    .hero {
+      background-color: #0b214a;
+      color: #fff;
+      padding: 4rem 2rem 3rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #00f0ff;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+    }
+    .card-servicio {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem 2rem;
+      background-color: #fff;
+    }
+    .card-servicio img {
+      width: 100%;
+      max-width: 480px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.2);
+    }
+    .card-texto {
+      max-width: 600px;
+    }
+    .card-texto h2 {
+      color: #0b214a;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .card-texto p {
+      font-size: 1.05rem;
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .beneficios {
+      background-color: #eafaff;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .beneficios h3 {
+      color: #0b214a;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .beneficios ul {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+      padding-left: 1.2rem;
+      font-size: 1.1rem;
+    }
+    .frase-final {
+      background: #0b214a;
+      color: #00f0ff;
+      font-size: 1.6rem;
+      padding: 3rem 1rem 6rem;
+      margin-bottom: 4rem;
+      text-align: center;
+      font-weight: bold;
+    }
+       .boton-volver-servicios {
+  display: inline-block;
+  margin: 1rem 0 2rem;
+  padding: 0.35rem 0.75rem;       /* 🔽 menos padding (altura y anchura) */
+  background-color: #00f0ff;
+  color: #0b214a;
+  font-weight: 600;
+  font-size: 0.9rem;              /* 🔽 texto más pequeño */
+  border-radius: 5px;             /* 🔽 bordes más suaves */
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.boton-volver-servicios i {
+  margin-right: 0.25rem;
+  font-size: 0.95rem;             /* 🔽 icono más pequeño también (opcional) */
+}
+.boton-volver-servicios:hover {
+  background-color: #00c8dd;
+}
+
+    @media (max-width: 768px) {
+      .card-servicio {
+        flex-direction: column;
+      }
+      .card-texto h2 {
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
   <header id="header"></header>
 
-  <main class="pagina-construccion">
-    <h1>🚧 Página en construcción</h1>
-    <p>Estamos preparando la sección <strong>Fontaneria</strong> con todos los detalles.</p>
-  </main>
+  <main>
+    <section class="hero">
+      <h1><i class="fas fa-faucet"></i> Servicios de Fontanería para Comunidades</h1>
+      <p>Instalaciones hidráulicas, reparación de averías, detección de fugas y mantenimiento integral para comunidades de propietarios.</p>
+    </section>
 
+    <section class="card-servicio">
+      <img src="../img/revision de red hidraulica.ChatGPT Image 7 jun 2025, 19_02_13.png" alt="Revisión de red hidráulica" />
+      <div class="card-texto">
+        <h2>Instalaciones y reparaciones hidráulicas</h2>
+        <p>Renovamos redes de abastecimiento, saneamiento, bajantes y montantes. Reparamos averías con rapidez y precisión, reduciendo molestias a la comunidad. Trabajamos sin obras invasivas siempre que sea posible.</p>
+      </div>
+    </section>
+
+    <section class="beneficios">
+      <h3>¿Qué servicios de fontanería ofrecemos?</h3>
+      <ul>
+        <li>Reparación urgente de fugas en zonas comunes y garajes.</li>
+        <li>Desatascos con maquinaria profesional y cámaras de inspección.</li>
+        <li>Mantenimiento de grupos de presión y depósitos acumuladores.</li>
+        <li>Sustitución de bajantes, montantes y llaves generales.</li>
+        <li>Instalación y legalización de contadores de agua.</li>
+        <li>Revisión y limpieza de arquetas y fosas sépticas.</li>
+      </ul>
+    </section>
+
+    <section class="beneficios">
+      <h3>Beneficios para tu comunidad</h3>
+      <ul>
+        <li>Menos averías, menos sorpresas, más tranquilidad.</li>
+        <li>Red hidráulica eficiente y legalizada.</li>
+        <li>Prevención de humedades, filtraciones y daños estructurales.</li>
+        <li>Atención personalizada y seguimiento técnico.</li>
+        <li>Servicio rápido, limpio y garantizado.</li>
+      </ul>
+    </section>
+
+<div class="frase-final">
+      <p>El agua bien gestionada no causa problemas. Nosotros lo hacemos posible</p>
+      <a href="index.html" class="boton-volver-servicios">
+        <i class="fas fa-arrow-left"></i> Volver al catálogo de servicios
+      </a>
+    </div>
+
+</main>
+<button id="btn-top" title="Volver arriba">&#8679;</button>
   <footer id="footer"></footer>
 
   <script src="../js/header.js"></script>
