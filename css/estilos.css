@@ -12,6 +12,14 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
+.sr-only {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 
 /* ---------- BANNER SUPERIOR (REESTRUCTURADO) ---------- */
 .banner-top {
