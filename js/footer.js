@@ -31,11 +31,11 @@ document.getElementById("footer").innerHTML = `
       </div>
 
       <div class="footer-redes">
-        <a href="https://www.instagram.com/borja_1629/" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.facebook.com/borja.gilgonzalez.7" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/bjm.mantenimientos/" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61576992344231" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
         <a href="#" aria-label="TikTok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-        <a href="#" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://www.youtube.com/watch?v=y7QFy5Iq09E" aria-label="YouTube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/in/bjm-manetimientos-industriales-b0a24b36b" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#" aria-label="YouTube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
       </div>
     </div>
 
