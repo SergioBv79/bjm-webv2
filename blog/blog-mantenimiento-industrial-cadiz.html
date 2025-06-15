@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="¿Por qué es clave el mantenimiento industrial en Cádiz? Descubre su impacto, beneficios y cómo elegir la empresa adecuada."/>
+  <title>Importancia del Mantenimiento Industrial en Cádiz | BJM Blog</title>
+  <link rel="icon" href="../icons/favicons/favicon.ico" type="image/x-icon"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+    .articulo {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .articulo h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .fecha-publicacion {
+      color: #888;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    .articulo img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+    .articulo h2 {
+      color: #005785;
+      margin-top: 2rem;
+    }
+    .volver-blog {
+      display: inline-block;
+      margin-top: 2rem;
+      text-decoration: none;
+      background: #005785;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .volver-blog:hover {
+      background: #004169;
+    }
+    #btn-top {
+      display: none;
+      position: fixed;
+      bottom: 40px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: #005785;
+      color: white;
+      cursor: pointer;
+      padding: 12px 16px;
+      border-radius: 50%;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+    #btn-top:hover {
+      background-color: #003f66;
+    }
+  </style>
+</head>
+<body>
+  <header id="header"></header>
+
+  <main class="articulo">
+    <h1>¿Por qué es clave el mantenimiento industrial en Cádiz?</h1>
+    <p class="fecha-publicacion">Publicado el 13 de junio de 2025</p>
+
+    <img src="../img/mantenimiento-industrial-bjm.jpg" alt="Técnico revisando maquinaria industrial en Cádiz" />
+
+    <p>En la provincia de Cádiz, con su fuerte presencia de industrias portuarias, energéticas y alimentarias, el <strong>mantenimiento industrial</strong> no es un lujo, es una necesidad estratégica. Un buen mantenimiento evita averías costosas, mejora la seguridad y alarga la vida útil de la maquinaria.</p>
+
+    <h2>Beneficios principales</h2>
+    <ul>
+      <li>Evita paradas inesperadas en la producción.</li>
+      <li>Reduce costes a largo plazo.</li>
+      <li>Mejora la eficiencia energética.</li>
+      <li>Garantiza el cumplimiento normativo y legal.</li>
+    </ul>
+
+    <h2>¿Cómo elegir una empresa especializada?</h2>
+    <p>Busca experiencia, equipo técnico certificado y capacidad de respuesta. En <strong>BJM Mantenimientos</strong> ofrecemos soluciones integrales adaptadas a cada tipo de industria.</p>
+
+    <img src="../img/equipo-bjm-industrial.jpg" alt="Equipo técnico de BJM en acción en Cádiz" />
+
+    <h2>Nuestra experiencia</h2>
+    <p>Con más de 15 años atendiendo instalaciones industriales en toda la provincia de Cádiz, somos referentes en mantenimientos correctivos, preventivos y predictivos. Trabajamos con responsabilidad, precisión y compromiso.</p>
+
+  <a href="../blog/index.html" class="volver-blog"><i class="fas fa-arrow-left"></i> Volver al blog</a>
+  </main>
+
+  <button id="btn-top" title="Volver arriba">&#8679;</button>
+
+  <footer id="footer"></footer>
+
+  <!-- JS para botón volver arriba -->
+  <script>
+    const btnTop = document.getElementById("btn-top");
+    window.onscroll = () => {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        btnTop.style.display = "block";
+      } else {
+        btnTop.style.display = "none";
+      }
+    };
+    btnTop.onclick = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
+</body>
+</html>
