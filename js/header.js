@@ -43,10 +43,10 @@ document.getElementById("header").innerHTML = `
   </nav>
 
   <div class="redes-header">
-    <a href="https://www.instagram.com/........./" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-    <a href="https://www.facebook.com/.........." aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+    <a href="https://www.instagram.com/bjm.mantenimiento.industrial/" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=61576992344231" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
     <a href="#" aria-label="TikTok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-    <a href="#" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://www.linkedin.com/in/bjm-mantenimientos-a99906306/" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
     <a href="#" aria-label="YouTube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
   </div>
 </div>
