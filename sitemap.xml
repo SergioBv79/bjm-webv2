@@ -1,57 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://bjmantenimientos.es/</loc>
-    <priority>1.0</priority>
-  </url>
+  <!-- Página principal -->
+  <url><loc>https://bjmantenimientos.es/</loc><priority>1.0</priority></url>
 
-  <url>
-    <loc>https://bjmantenimientos.es/index.html</loc>
-  </url>
+  <!-- Páginas principales -->
+  <url><loc>https://bjmantenimientos.es/contacto.html</loc></url>
+  <url><loc>https://bjmantenimientos.es/gracias.html</loc></url>
+  <url><loc>https://bjmantenimientos.es/trabaja.html</loc></url>
+  <url><loc>https://bjmantenimientos.es/accesibilidad.html</loc></url>
+  <url><loc>https://bjmantenimientos.es/aviso-legal.html</loc></url>
+  <url><loc>https://bjmantenimientos.es/politica-cookies.html</loc></url>
+  <url><loc>https://bjmantenimientos.es/politica-privacidad.html</loc></url>
 
-  <url>
-    <loc>https://bjmantenimientos.es/contacto.html</loc>
-  </url>
+  <!-- Secciones -->
+  <url><loc>https://bjmantenimientos.es/blog/</loc></url>
+  <url><loc>https://bjmantenimientos.es/quienes-somos/</loc></url>
+  <url><loc>https://bjmantenimientos.es/servicios/</loc></url>
+  <url><loc>https://bjmantenimientos.es/trabajos/</loc></url>
 
-  <url>
-    <loc>https://bjmantenimientos.es/gracias.html</loc>
-  </url>
+  <!-- Páginas internas relevantes -->
+  <url><loc>https://bjmantenimientos.es/quienes-somos/equipo.html</loc></url>
+  <url><loc>https://bjmantenimientos.es/quienes-somos/historia.html</loc></url>
+  <url><loc>https://bjmantenimientos.es/quienes-somos/mision-vision.html</loc></url>
+  <url><loc>https://bjmantenimientos.es/quienes-somos/rsc.html</loc></url>
 
-  <url>
-    <loc>https://bjmantenimientos.es/trabaja.html</loc>
-  </url>
-
-  <url>
-    <loc>https://bjmantenimientos.es/accesibilidad.html</loc>
-  </url>
-
-  <url>
-    <loc>https://bjmantenimientos.es/aviso-legal.html</loc>
-  </url>
-
-  <url>
-    <loc>https://bjmantenimientos.es/politica-cookies.html</loc>
-  </url>
-
-  <url>
-    <loc>https://bjmantenimientos.es/politica-privacidad.html</loc>
-  </url>
-
-  <url>
-    <loc>https://bjmantenimientos.es/blog/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://bjmantenimientos.es/quienes-somos/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://bjmantenimientos.es/servicios/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://bjmantenimientos.es/trabajos/index.html</loc>
-  </url>
+  <!-- Servicios industriales -->
+  <url><loc>https://bjmantenimientos.es/servicios/automatizacion.html</loc></url>
+  <url><loc>https://bjmantenimientos.es/servicios/desmontaje.html</loc></url>
+  <url><loc>https://bjmantenimientos.es/servicios/documentacion-tecnica.html</loc></url>
+  <url><loc>https://bjmantenimientos.es/servicios/electricidad.html</loc></url>
+  <url><loc>https://bjmantenimientos.es/servicios/electricidad-industrial-cuadros-electricos.html</loc></url>
+  <url><loc>https://bjmantenimientos.es/servicios/fontaneria.html</loc></url>
+  <url><loc>https://bjmantenimientos.es/servicios/limpieza.html</loc></url>
+  <url><loc>https://bjmantenimientos.es/servicios/mantenimiento-correctivo.html</loc></url>
+  <url><loc>https://bjmantenimientos.es/servicios/mantenimiento-especializado.html</loc></url>
+  <url><loc>https://bjmantenimientos.es/servicios/mantenimiento-preventivo.html</loc></url>
+  <url><loc>https://bjmantenimientos.es/servicios/maquinaria.html</loc></url>
+  <url><loc>https://bjmantenimientos.es/servicios/pintura-reparacion-fachadas.html</loc></url>
+  <url><loc>https://bjmantenimientos.es/servicios/piscinas.html</loc></url>
+  <url><loc>https://bjmantenimientos.es/servicios/soldadura.html</loc></url>
 
 </urlset>
